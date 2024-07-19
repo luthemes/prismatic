@@ -17,6 +17,5 @@
  * Load the bootstrap files. Note that autoload should happen first so that any classes or
  * functions are available that we might need.
  */
-
- require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
- require_once get_parent_theme_file_path( 'app/framework.php' );
+require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
+require_once get_parent_theme_file_path( 'app/framework.php' );
