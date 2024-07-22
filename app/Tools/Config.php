@@ -30,9 +30,9 @@ class Config {
 	 * @param  string  $name
 	 * @return array
 	 */
-	public function get( string $name ) {
+	public static function get( string $name ) {
 
-		$file = $this->path( "{$name}.php" );
+		$file = static::path( "{$name}.php" );
 
 		return ( array ) apply_filters( "prismatic/config/{$name}/", file_exists( $file ) ? include( $file ) : [] );
 	}
@@ -45,7 +45,7 @@ class Config {
 	 * @param  string  $file
 	 * @return string
 	 */
-	public function path( string $file = '' ) {
+	public static function path( string $file = '' ) {
 
 		$file = trim( $file, '/' );
 
