@@ -35,9 +35,9 @@ class Mod {
 	 * @param  mixed   $default
 	 * @return mixed
 	 */
-	public function get( $name, $default = '' ) {
+	public static function get( $name, $default = '' ) {
 
-		$fallback = $this->fallback( $name );
+		$fallback = static::fallback( $name );
 
 		return mod(
 			$name,
@@ -53,9 +53,9 @@ class Mod {
 	 * @param  string  $name
 	 * @return mixed
 	 */
-	public function fallback( $name ) {
+	public static function fallback( $name ) {
 
-		$mods = App::resolve( 'silver/quantum/mods' );;
+		$mods = App::resolve( 'prismatic/mods' );;
 
 		if ( isset( $mods[ $name ] ) ) {
 
