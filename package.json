@@ -1,0 +1,28 @@
+{
+	"name": "prismatic",
+	"description": "prismatic is a next-generation theme designed to work with ClassicPress, offering an ideal experience for showcasing your site's content.",
+	"version": "1.0.0",
+	"author": "Benjamin Lu",
+	"license": "GPL-2.0+",
+	"homepage": "https://luthemes.com/portfolio/prismatic",
+	"main": "resources/js/app.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/luthemes/prismatic.git"
+	},
+	"bugs": {
+		"url": "https://github.com/luthemes/prismatic/issues"
+	},
+	"scripts": {
+		"build": "npm run prod && npm run export",
+		"watch": "mix watch",
+		"prod": "mix --production",
+		"export": "mix --mix-config=webpack.mix.export.js"
+	},
+	"devDependencies": {
+		"fs-extra": "^11.2.0",
+		"laravel-mix": "^6.0.49",
+		"sass": "^1.62.1",
+		"sass-loader": "^12.6.0"
+	}
+}

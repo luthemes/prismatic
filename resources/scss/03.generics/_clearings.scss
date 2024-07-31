@@ -1,0 +1,10 @@
+.site-content,
+.content-area,
+.widget-area {
+	&:after,
+	&:before {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}

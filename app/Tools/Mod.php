@@ -14,8 +14,8 @@
 namespace Prismatic\Tools;
 
 use Closure;
-use Backdrop\App;
 
+use Backdrop\App;
 use function Backdrop\Theme\mod;
 
 /**
@@ -39,9 +39,7 @@ class Mod {
 
 		$fallback = static::fallback( $name );
 
-		return mod(
-			$name,
-			! $default && ! is_null( $fallback ) ? $fallback : $default
+		return mod( $name, ! $default && ! is_null( $fallback ) ? $fallback : $default
 		);
 	}
 
@@ -55,7 +53,7 @@ class Mod {
 	 */
 	public static function fallback( $name ) {
 
-		$mods = App::resolve( 'prismatic/mods' );;
+		$mods = App::resolve( 'prismatic/mods' );
 
 		if ( isset( $mods[ $name ] ) ) {
 

@@ -1,0 +1,14 @@
+@function font-families() {
+
+	@return (
+		heading: var( --font-family-heading, 'Fira Sans', sans-serif ),
+		primary: var( --font-family-primary, 'Merriweather', serif ),
+		date:    var( --font-family-date, 'Tangerine', cursive ),
+		code   : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
+	);
+}
+
+@function font-family( $name ) {
+
+	@return map-get( font-families(), $name );
+}

@@ -1,0 +1,83 @@
+////
+/// Primary Screen Stylesheet
+///
+/// This is the primary stylesheet. We don't actually write any styles here.
+/// Instead, we import all of our styles from partials within the sub-folders.
+///
+/// @group  Styles
+/// @author Benjamin Lu <benlumia007@gmail.com>
+/// @link   https://luthemes.com/portfolio/prismatic
+////
+
+// -----------------------------------------------------------------------------
+// Import settings.
+// -----------------------------------------------------------------------------
+//
+// Settings handle the configuration and variables.
+
+@import '01.settings/__index';
+
+// -----------------------------------------------------------------------------
+// Import tools.
+// -----------------------------------------------------------------------------
+//
+// These are used throughout the code but don't output CSS on their own. Things
+// like functions, mixins, and extensions go here.
+
+@import '02.tools/__index';
+
+// -----------------------------------------------------------------------------
+// Import generic styles.
+// -----------------------------------------------------------------------------
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
+
+@import '03.generics/__index';
+
+// -----------------------------------------------------------------------------
+// Import element styles.
+// -----------------------------------------------------------------------------
+//
+// Elements are (or should be) class-less designs for the base HTML elements.
+// The styles in this folder should only handle the defaults. More specific
+// styles should be handled later in the cascade.
+
+@import '04.elements/__index';
+
+// -----------------------------------------------------------------------------
+// Import object styles.
+// -----------------------------------------------------------------------------
+//
+// Undecorated design patterns.
+
+@import '05.objects/__index';
+
+// -----------------------------------------------------------------------------
+// Import layout styles.
+// -----------------------------------------------------------------------------
+//
+// global layouts.
+
+@import '06.layouts/__index';
+
+// -----------------------------------------------------------------------------
+// Import component styles.
+// -----------------------------------------------------------------------------
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
+
+@import '07.components/__index';
+
+// -----------------------------------------------------------------------------
+// Import utility styles.
+// -----------------------------------------------------------------------------
+//
+// Utilities are helper classes and overrides. This gets loaded last. If
+// necessary, this is the only place where `!important` rules should go, but
+// only if necessary.
+
+@import '08.utilities/__index';

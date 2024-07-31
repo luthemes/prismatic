@@ -1,0 +1,47 @@
+{
+	"name": "luthemes/prismatic",
+	"type": "classicpress-theme",
+	"description": "Creativity is a next-generation theme designed to work with ClassicPress, offering an ideal experience for showcasing your site's content.",
+	"keywords": [ "classicpress", "theme" ],
+	"homepage": "https://luthemes.com/portfolio/creativity",
+	"license": "GPL-2.0-or-later",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "Benjamin Lu",
+			"email": "benlumia007@gmail.com",
+			"homepage": "https://luthemes.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Prismatic\\": "app"
+		}
+	},
+	"require": {
+		"php": ">=7.1",
+		"backdrop-dev/customize": "dev-develop",
+		"backdrop-dev/fonts": "dev-develop",
+		"backdrop-dev/framework": "dev-develop",
+		"backdrop-dev/languages": "dev-develop",
+		"backdrop-dev/mix": "dev-develop",
+		"backdrop-dev/template-hierarchy": "dev-develop",
+		"backdrop-dev/template-manager": "dev-develop",
+		"backdrop-dev/theme": "dev-develop",
+		"backdrop-dev/view": "dev-develop"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"wptrt/wpthemereview": "*",
+		"php-parallel-lint/php-parallel-lint": "*"
+	},
+	"scripts": {
+		"lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs . -n",
+		"lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor ."
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
