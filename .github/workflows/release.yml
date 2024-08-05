@@ -1,0 +1,45 @@
+name: release
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: step one
+              uses: webfactory/ssh-agent@v0.5.4
+              with:
+                  ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+
+            - name: step two
+              uses: actions/checkout@v2
+              with:
+                  ssh-key: ${{ secrets.PRIVATE_KEY }}
+
+            - name: step three
+              run: composer install --no-dev
+
+            - name: step four
+              run: npm install
+
+            - name: step five
+              run: npm run build
+
+            - name: step six
+              run: zip -r ${{ github.event.repository.name }}.${{ github.ref_name }}.zip ${{ github.event.repository.name }}
+
+            - name: step seven
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.event.repository.name }}.${{ github.ref_name }}
+                  path: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip
+
+            - name: step eight
+              uses: JasonEtco/upload-to-release@master
+              with:
+                  args: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip application/zip
+              env:
+                  GITHUB_TOKEN: ${{ secrets.TOKEN }}

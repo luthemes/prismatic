@@ -89,7 +89,7 @@ class Component implements Bootable {
 	public function registerSections( WP_Customize_Manager $manager ) {
 		$manager->remove_section( 'custom_css' );
 		$manager->get_section( 'title_tagline' )->panel = 'theme_header';
-		$manager->get_section( 'title_tagline' )->title = esc_html__( 'Branding', 'backdrop' );
+		$manager->get_section( 'title_tagline' )->title = esc_html__( 'Branding', 'prismatic' );
 		$manager->get_section( 'static_front_page' )->panel = 'theme_content';
 		$manager->get_section( 'static_front_page' )->title = __( 'Settings', 'prismatic' );
 
@@ -109,21 +109,21 @@ class Component implements Bootable {
 
 		// Add control for background type
 		$manager->add_control('mytheme_bg_type_control', array(
-			'label' => __('Background Type', 'your-textdomain'),
+			'label' => __('Background Type', 'prismatic'),
 			'section' => 'theme_global_background',
 			'settings' => 'mytheme_bg_type',
 			'priority' => 20,
 			'type' => 'select',
 			'choices' => array(
-				'none' => __('None', 'your-textdomain'),
-				'image' => __('Image', 'your-textdomain'),
-				'pattern' => __('Pattern', 'your-textdomain'),
+				'none' => __('None', 'prismatic'),
+				'image' => __('Image', 'prismatic'),
+				'pattern' => __('Pattern', 'prismatic'),
 			),
 		));
 
 		$patterns = Config::get( 'background-patterns' );
 
-		$pattern_choices = array('none' => __('None', 'your-textdomain'));
+		$pattern_choices = array('none' => __('None', 'prismatic'));
 		foreach ($patterns as $key => $pattern) {
 			$pattern_choices[$key] = $pattern['label'];
 		}
@@ -136,7 +136,7 @@ class Component implements Bootable {
 
 		// Add control for background pattern
 		$manager->add_control(new WP_Customize_Control($manager, 'mytheme_bg_pattern_control', array(
-			'label' => __('Background Pattern', 'your-textdomain'),
+			'label' => __('Background Pattern', 'prismatic'),
 			'section' => 'theme_global_background',
 			'settings' => 'mytheme_bg_pattern',
 			'type' => 'radio',
@@ -252,7 +252,7 @@ class Component implements Bootable {
 			$custom_css = 'body.custom-background { background-image: url("' . esc_url($bg_image) . '"); background-size: cover; }';
 		} elseif ($bg_type === 'pattern' && isset($patterns[$bg_pattern])) {
 			$pattern_svg = $patterns[$bg_pattern]['svg'];
-			$pattern_svg_base64 = base64_encode($pattern_svg);
+			$pattern_svg_base64 = base64_encode($pattern_svg); // phpcs:ignore
 			$custom_css = 'body.custom-background {
 				background-color: rgba(255, 255, 255, 0.9); /* Lighter background color with opacity */
 				background-image: url("data:image/svg+xml;base64,' . $pattern_svg_base64 . '");

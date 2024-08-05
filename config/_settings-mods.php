@@ -49,9 +49,9 @@
 	// Default footer credit text.
 	'theme_footer_custom_credit' => function() {
 		if ( is_classicpress() ) {
-            return sprintf( __( 'Powered by %s.', 'creativity' ), SilverQuantum\Site\render_cp_link() );
+            return sprintf( __( 'Powered by %s.', 'prismatic' ), SilverQuantum\Site\render_cp_link() );
         } else {
-            return sprintf( __( 'Powered by %s.', 'creativity' ), SilverQuantum\Site\render_wp_link() );
+            return sprintf( __( 'Powered by %s.', 'prismatic' ), SilverQuantum\Site\render_wp_link() );
         }
 	},
  ];

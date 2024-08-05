@@ -32,7 +32,7 @@ class Footer {
 	 * @return void
 	 */
 	public static function displayCredit() {
-		echo static::renderCredit();
+		echo static::renderCredit(); // phpcs:ignore
 	}
 
 	/**

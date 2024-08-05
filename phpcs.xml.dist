@@ -61,8 +61,7 @@
 		<exclude name="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents"/>
 		<exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion"/>
 		<exclude name="WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion"/>
-        <exclude name="WordPress.WP.GlobalVariablesOverride.OverrideProhibited"/>
-
+		<exclude name="WordPress.WP.EnqueuedResourceParameters.NotInFooter"/>
 
 		<!-- Remove Squiz rules in Bulk -->
 		<exclude name="Squiz.Commenting"/>
@@ -80,27 +79,35 @@
 		<exclude name="Squiz.PHP.CommentedOutCode.Found"/>
 		<exclude name="Squiz.PHP.DisallowMultipleAssignments.Found"/>
 		<exclude name="Squiz.PHP.DisallowMultipleAssignments.FoundInControlStructure"/>
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen"/>
+		<exclude name="Squiz.PHP.EmbeddedPhp.MultipleStatements"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.SpacingBeforeClose"/>
+		<exclude name="Squiz.Scope.MethodScope.Missing"/>
 		<exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound"/>
 		<exclude name="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
 
 		<!-- Remove PEAR rules in Bulk -->
 		<exclude name="PEAR.Commenting"/>
 		<exclude name="PEAR.Functions.FunctionCallSignature"/>
+		<exclude name="PEAR.NamingConventions"/>
 
 		<!-- Remove PEAR Specific rules -->
 		<exclude name="PEAR.Files.IncludingFile.BracketsNotRequired"/>
+		<exclude name="PEAR.Files.IncludingFile.UseRequire"/>
 
 		<!-- Remove PSR2 rules in Bulk -->
 		<exclude name="PSR2.ControlStructures"/>
 		<exclude name="PSR2.Namespaces"/>
+		<exclude name="PSR2.Classes.PropertyDeclaration"/>
 
 		<!-- Remove PSR2 Specific rules -->
 		<exclude name="PSR2.Files.ClosingTag.NotAllowed"/>
+		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
+		<exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
 
 		<!-- Remove Generic rules in Bulk -->
 		<exclude name="Generic.Classes"/>

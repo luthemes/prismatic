@@ -148,7 +148,7 @@ add_action( 'after_setup_theme', function() {
 		'header-image' => [
 			'url'           => '%s/public/images/header-cross.png',
 			'thumbnail_url' => '%s/public/images/header-cross.png',
-			'description'   => esc_html__( 'Header Image', 'creativity' ),
+			'description'   => esc_html__( 'Header Image', 'prismatic' ),
 		],
 	] );
 } );
