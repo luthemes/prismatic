@@ -31,6 +31,7 @@ let files = [
 // Folders to include.
 let folders = [
 	'app',
+	'config',
 	'public',
 	'vendor'
 ];
