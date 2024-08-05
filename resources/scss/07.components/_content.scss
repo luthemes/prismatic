@@ -63,3 +63,254 @@
 		}
 	}
 }
+
+.comments-area {
+	background: color( white );
+	margin: 1.125rem auto;
+
+
+	.comments-title {
+		margin: 0;
+		padding: 0;
+	}
+
+	.comment-list {
+		list-style-type: none;
+		margin-top: 1.125rem;
+		padding: 0;
+
+		.comments {
+			border: 0.063rem solid #cccccc;
+			margin-top: 1.125rem;
+			padding: 1.125rem;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			.comment-meta {
+				border-bottom: 0.063rem solid #cccccc;
+				font-weight: bold;
+
+				a {
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+						text-decoration-thickness: 2px;
+					}
+				}
+
+				.sep {
+					font-size: 0.875rem;
+				}
+
+				.comment-permalink {
+					font-size: 0.875rem;
+					font-weight: normal;
+				}
+
+				.comment-edit {
+					font-size: 0.875rem;
+					font-weight: normal;
+				}
+
+				.comment-reply {
+					font-size: 0.875rem;
+					font-weight: normal;
+				}
+
+			}
+
+			.children {
+				border: none;
+				.comments {
+					border: none;
+
+					.comment__parent-link {
+						font-size: 0.813rem;
+					}
+
+					svg {
+						height: 1em;
+						vertical-align: text-bottom;
+						padding: 0 0.25em 0.1em;
+					}
+				}
+			}
+		}
+
+
+
+		.bypostauthor > {
+			.comment-body {
+				background: #eeeeee;
+				border: 0.063rem solid #cccccc;
+				padding: 1.125rem;
+			}
+		}
+
+		.comment-meta {
+			border-bottom: 0.063rem solid #cccccc;
+
+			.comment-author {
+				.fn {
+					font-size: 1.125rem;
+					font-weight: bold;
+
+					a {
+						border-bottom: none;
+					}
+
+				}
+
+				.says {
+					display: none;
+				}
+			}
+
+			.comment-metadata {
+				font-size: 0.875rem;
+
+				.comment-edit-link {
+					display: none;
+				}
+			}
+		}
+
+		.reply {
+			font-size: 0.875rem;
+			text-align: right;
+		}
+
+		.children {
+			list-style-type: none;
+			margin-top: 1.125rem 0;
+			padding-left: 2.250rem;
+
+
+			.comment {
+				border: none;
+				padding: 0;
+			}
+		}
+	}
+
+	.comment-respond {
+		border: 0.063rem solid #cccccc;
+		margin-top: 1.125rem;
+		padding: 1.125rem;
+
+		.comment-reply-title {
+			margin: 0;
+			padding: 0;
+
+			small {
+				font-size: 14px;
+				margin-left: 0.5rem;
+			}
+		}
+
+		.logged-in-as {
+			font-size: 0.875rem;
+		}
+
+		.comment-form {
+			margin-top: -1rem;
+			.comment-form-comment {
+
+				textarea {
+					border: 0.063em solid #cccccc;
+					box-sizing: border-box;
+					font-family: 'Merriewather', serif;
+					font-size: 1rem;
+					max-height: 230px;
+					max-width: 100%;
+					display: block;
+					padding: 0.5rem;
+					width: 100%;
+				}
+			}
+
+			.comment-form-author {
+				float: left;
+				width: 49.20634920634921%;
+
+				input[type="text"] {
+					border: 0.063em solid #cccccc;
+					box-sizing: border-box;
+					font-family: 'Merriewather', serif;
+					font-size: 1em;
+					display: block;
+					padding: 0.5em;
+					width: 100%;
+				}
+			}
+
+			.comment-form-email {
+				float: right;
+				width: 49.20634920634921%;
+
+				input[type="email"] {
+					border: 0.063em solid #cccccc;
+					box-sizing: border-box;
+					font-family: 'Merriewather', serif;
+					font-size: 1em;
+					display: block;
+					padding: 0.5em;
+					width: 100%;
+				}
+			}
+
+			.comment-form-url {
+				margin-bottom: 1.3em;
+				width: 100%;
+
+				input[type="url"] {
+					border: 0.063em solid #cccccc;
+					box-sizing: border-box;
+					font-family: 'Merriewather', serif;
+					font-size: 1em;
+					display: block;
+					padding: 0.5em;
+					width: 100%;
+				}
+			}
+
+			.form-submit {
+				margin-bottom: 0;
+
+				.submit {
+					cursor: pointer;
+					display: inline-block;
+					margin: 0;
+					padding: 0.5rem 1rem;
+					line-height: 1;
+					font-family: var(--font-family-secondary);
+					font-size: 1rem;
+					border-radius: 3px;
+					white-space: normal;
+					word-break: break-all;
+					transition: all .5s ease-in-out;
+				}
+			}
+
+			.required {
+				color: #FF0000;
+				font-size: 0.625em;
+			}
+
+			.comment-notes {
+				font-size: 12px;
+			}
+
+			.comment-form-cookies-consent {
+				font-size: 14px;
+
+				input[type="checkbox"] {
+					margin-right: 0.250em;
+				}
+			}
+		}
+	}
+}
