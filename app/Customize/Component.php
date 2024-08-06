@@ -232,7 +232,7 @@ class Component implements Bootable {
 		$background = get_theme_mod( 'theme_header_background_color', '#0b5e79' );
 		$custom = "
 			.site-header {
-				background: ${background};
+				background: {$background};
 			}
 		";
 
