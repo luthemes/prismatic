@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "812a94415d11fbb786a35d2343f017c2",
+    "content-hash": "5100ced5485fef168c9a930bc5b2a75b",
     "packages": [
         {
             "name": "backdrop-dev/contracts",
@@ -155,12 +155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/framework.git",
-                "reference": "79bf558270f73f3375b015d5b2356350c07c72fd"
+                "reference": "7c385af7ba7481fdd3c7103262a689c59f789f7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/framework/zipball/79bf558270f73f3375b015d5b2356350c07c72fd",
-                "reference": "79bf558270f73f3375b015d5b2356350c07c72fd",
+                "url": "https://api.github.com/repos/backdrop-dev/framework/zipball/7c385af7ba7481fdd3c7103262a689c59f789f7d",
+                "reference": "7c385af7ba7481fdd3c7103262a689c59f789f7d",
                 "shasum": ""
             },
             "require": {
@@ -199,7 +199,7 @@
                 "issues": "https://github.com/backdrop-dev/framework/issues",
                 "source": "https://github.com/backdrop-dev/framework/tree/develop"
             },
-            "time": "2024-08-06T21:18:45+00:00"
+            "time": "2024-08-06T23:39:37+00:00"
         },
         {
             "name": "backdrop-dev/languages",
@@ -1171,7 +1171,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
