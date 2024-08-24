@@ -18,7 +18,7 @@
  * been booted.
  */
 
-$prismatic = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
+$theme = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
 
 /** ------------------------------------------------------------------------------------------
  * Register default service providers with the application.
@@ -27,13 +27,13 @@ $prismatic = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application(
  * Here are the default service providers that are essential for the theme to function before
  * booting the application. These service providers form the foundation for the theme.
  */
-$prismatic->provider( Backdrop\Fonts\Provider::class );
-$prismatic->provider( Backdrop\Languages\Provider::class );
-$prismatic->provider( Backdrop\Mix\Provider::class );
-$prismatic->provider( Backdrop\Template\Hierarchy\Provider::class );
-$prismatic->provider( Backdrop\Template\Manager\Provider::class );
-$prismatic->provider( Backdrop\Theme\Provider::class );
-$prismatic->provider( Backdrop\View\Provider::class );
+$theme->provider( Backdrop\Fonts\Provider::class );
+$theme->provider( Backdrop\Languages\Provider::class );
+$theme->provider( Backdrop\Mix\Provider::class );
+$theme->provider( Backdrop\Template\Hierarchy\Provider::class );
+$theme->provider( Backdrop\Template\Manager\Provider::class );
+$theme->provider( Backdrop\Theme\Provider::class );
+$theme->provider( Backdrop\View\Provider::class );
 
 /** ------------------------------------------------------------------------------------------
  * Register additional service providers for the theme.
@@ -42,9 +42,9 @@ $prismatic->provider( Backdrop\View\Provider::class );
  * These are the additional providers that are crucial for the theme to operate before booting
  * the application. These service providers offer supplementary features to the theme.
  */
-$prismatic->provider( Prismatic\Provider::class );
-$prismatic->provider( Prismatic\Customize\Provider::class );
-// $prismatic->provider( Prismatic\Layout\Provider::class );
+$theme->provider( Prismatic\Provider::class );
+$theme->provider( Prismatic\Customize\Provider::class );
+// $theme->provider( Prismatic\Layout\Provider::class );
 
 
 /** ------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ $prismatic->provider( Prismatic\Customize\Provider::class );
  * application instance as a parameter.
  */
 
-do_action( 'prismatic/bootstrap', $prismatic );
+do_action( 'prismatic/bootstrap', $theme );
 
 /** ------------------------------------------------------------------------------------------
  * Boot the application.
@@ -66,4 +66,4 @@ do_action( 'prismatic/bootstrap', $prismatic );
  * application. Congratulations on a job well done!
  */
 
-$prismatic->boot();
+$theme->boot();
