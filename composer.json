@@ -25,6 +25,7 @@
 		"backdrop-dev/framework": "dev-develop",
 		"backdrop-dev/languages": "dev-develop",
 		"backdrop-dev/mix": "dev-develop",
+		"backdrop-dev/pagination": "dev-develop",
 		"backdrop-dev/template-hierarchy": "dev-develop",
 		"backdrop-dev/template-manager": "dev-develop",
 		"backdrop-dev/theme": "dev-develop",

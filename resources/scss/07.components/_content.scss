@@ -80,8 +80,9 @@
 		padding: 0;
 
 		.comments {
-			border: 0.063rem solid #cccccc;
-			margin-top: 1.125rem;
+			background: #ffffff;
+			border: 0.063rem dotted #5394a8;
+			border-bottom: 0.063rem solid #5394a8;
 			padding: 1.125rem;
 
 			&:first-child {
@@ -197,8 +198,9 @@
 	}
 
 	.comment-respond {
-		border: 0.063rem solid #cccccc;
-		margin-top: 1.125rem;
+		background: #ffffff;
+		border: 0.063rem dotted #5394a8;
+		border-bottom: 0.063rem solid #5394a8;
 		padding: 1.125rem;
 
 		.comment-reply-title {
