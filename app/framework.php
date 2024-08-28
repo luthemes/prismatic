@@ -42,11 +42,16 @@ $theme->provider( Backdrop\View\Provider::class );
  * These are the additional providers that are crucial for the theme to operate before booting
  * the application. These service providers offer supplementary features to the theme.
  */
-$theme->provider( Prismatic\Provider::class );
-$theme->provider( Prismatic\Customize\Provider::class );
-// $theme->provider( Prismatic\Layout\Provider::class );
-$theme->provider( Prismatic\Settings\Provider::class );
 
+$theme->provider( Prismatic\Provider::class );
+
+array_map( function( $component ) use ( $theme ) {
+    $theme->provider( "Prismatic\\{$component}\\Provider" );
+}, [
+    'Clean',
+    'Customize',
+    'Settings'
+] );
 
 /** ------------------------------------------------------------------------------------------
  * Perform any actions.
