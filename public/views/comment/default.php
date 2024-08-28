@@ -23,8 +23,8 @@
 			'text' => Backdrop\Theme\Comment\render_date()
 		] );
 		?>
-		<?php Backdrop\Theme\Comment\display_edit_link() ?>
-		<?php Backdrop\Theme\Comment\display_reply_link() ?>
+		<?php Backdrop\Theme\Comment\display_edit_link( [ 'before' => Prismatic\sep() ] ) ?>
+		<?php Backdrop\Theme\Comment\display_reply_link( [ 'before' => Prismatic\sep() ] ) ?>
 	</header>
 
 	<div class="comment-content">
