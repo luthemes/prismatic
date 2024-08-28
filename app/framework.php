@@ -45,6 +45,7 @@ $theme->provider( Backdrop\View\Provider::class );
 $theme->provider( Prismatic\Provider::class );
 $theme->provider( Prismatic\Customize\Provider::class );
 // $theme->provider( Prismatic\Layout\Provider::class );
+$theme->provider( Prismatic\Settings\Provider::class );
 
 
 /** ------------------------------------------------------------------------------------------
