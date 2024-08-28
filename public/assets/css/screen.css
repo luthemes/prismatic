@@ -303,61 +303,6 @@ h6 {
     transition-delay: 0s, 0s, 0.3s;
   }
 }
-.left-sidebar .content-area {
-  float: right;
-  line-height: 1.8rem;
-  width: 72.8205128205%;
-}
-@media screen and (max-width: 600px) {
-  .left-sidebar .content-area .content-area {
-    float: none;
-    width: 100%;
-  }
-}
-.left-sidebar .content-area .post {
-  background: #ffffff;
-  border: 0.063rem dotted #5394a8;
-  border-bottom: 0.063rem solid #5394a8;
-  margin-top: 1.125rem;
-  padding: 1.125rem;
-}
-.left-sidebar .content-area .post:first-child {
-  margin-top: 0;
-}
-.left-sidebar .content-area .post .entry-header {
-  text-align: center;
-}
-.left-sidebar .content-area .post .entry-header .entry-title {
-  margin: 0;
-  padding: 0;
-}
-.left-sidebar .content-area .page {
-  background: #ffffff;
-  border: 0.063rem dotted #5394a8;
-  border-bottom: 0.063rem solid #5394a8;
-  padding: 1.125rem;
-}
-.left-sidebar .content-area .page:first-child {
-  margin-top: 0;
-}
-.left-sidebar .content-area .page .entry-header {
-  text-align: center;
-}
-.left-sidebar .content-area .page .entry-header .entry-title {
-  margin: 0;
-  padding: 0;
-}
-.left-sidebar .widget-area {
-  float: left;
-  width: 25.641025641%;
-}
-@media screen and (max-width: 600px) {
-  .left-sidebar .widget-area {
-    float: none;
-    width: 100%;
-  }
-}
-
 .comments-area {
   background: #ffffff;
   margin: 1.125rem auto;
@@ -372,8 +317,9 @@ h6 {
   padding: 0;
 }
 .comments-area .comment-list .comments {
-  border: 0.063rem solid #cccccc;
-  margin-top: 1.125rem;
+  background: #ffffff;
+  border: 0.063rem dotted #5394a8;
+  border-bottom: 0.063rem solid #5394a8;
   padding: 1.125rem;
 }
 .comments-area .comment-list .comments:first-child {
@@ -457,8 +403,9 @@ h6 {
   padding: 0;
 }
 .comments-area .comment-respond {
-  border: 0.063rem solid #cccccc;
-  margin-top: 1.125rem;
+  background: #ffffff;
+  border: 0.063rem dotted #5394a8;
+  border-bottom: 0.063rem solid #5394a8;
   padding: 1.125rem;
 }
 .comments-area .comment-respond .comment-reply-title {
@@ -611,6 +558,65 @@ h6 {
   background: #000000;
   color: #ffffff;
   font-weight: 700;
+}
+
+.left-sidebar .content-area {
+  float: right;
+  line-height: 1.8rem;
+  width: 72.8205128205%;
+}
+@media screen and (max-width: 600px) {
+  .left-sidebar .content-area .content-area {
+    float: none;
+    width: 100%;
+  }
+}
+.left-sidebar .content-area .post {
+  background: #ffffff;
+  border: 0.063rem dotted #5394a8;
+  border-bottom: 0.063rem solid #5394a8;
+  margin-top: 1.125rem;
+  padding: 1.125rem;
+}
+.left-sidebar .content-area .post:first-child {
+  margin-top: 0;
+}
+.left-sidebar .content-area .post .entry-header {
+  text-align: center;
+}
+.left-sidebar .content-area .post .entry-header .entry-title {
+  margin: 0;
+  padding: 0;
+}
+.left-sidebar .content-area .page {
+  background: #ffffff;
+  border: 0.063rem dotted #5394a8;
+  border-bottom: 0.063rem solid #5394a8;
+  padding: 1.125rem;
+}
+.left-sidebar .content-area .page:first-child {
+  margin-top: 0;
+}
+.left-sidebar .content-area .page .entry-header {
+  text-align: center;
+}
+.left-sidebar .content-area .page .entry-header .entry-title {
+  margin: 0;
+  padding: 0;
+}
+.left-sidebar .widget-area {
+  float: left;
+  width: 25.641025641%;
+}
+@media screen and (max-width: 600px) {
+  .left-sidebar .widget-area {
+    float: none;
+    width: 100%;
+  }
+}
+
+.widget {
+  line-height: 1.5rem;
 }
 
 .screen-reader-text {
