@@ -1,6 +1,9 @@
 # Change Log
 
-## 0.0.4 - 08.28.2024
+## 0.0.4 - 08.29.2024
+
+### Enhancement
+- Reorganized Background Image with Patterns
 
 ### Added
 - Add Settings Page

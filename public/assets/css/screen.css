@@ -84,7 +84,7 @@ h6 {
 .site-footer {
   background: #0b5e79;
   color: #fff;
-  padding: 1.125rem;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -617,6 +617,16 @@ h6 {
 
 .widget {
   line-height: 1.5rem;
+}
+
+.site-info {
+  line-height: 1.8rem;
+}
+.site-info a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .screen-reader-text {
