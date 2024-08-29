@@ -15,7 +15,3 @@
 		<?php Backdrop\View\display( 'sidebar', 'primary', [ 'location' => 'primary' ] ); ?>
 	</div>
 </section>
-
-<section id="content" class="site-content">
-
-</section>
