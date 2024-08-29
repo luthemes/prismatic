@@ -117,10 +117,6 @@ add_action( 'widgets_init', function() {
 			'name' => esc_html__( 'Secondary', 'prismatic' )
 		],
 		[
-			'id' => 'portfolio',
-			'name' => esc_html__( 'Portfolio', 'prismatic' )
-		],
-		[
 			'id' => 'custom',
 			'name' => esc_html__( 'Custom', 'prismatic' )
 		],
@@ -130,28 +126,6 @@ add_action( 'widgets_init', function() {
 		register_sidebar( array_merge( $sidebar, $args ) );
 	}
 }, 5 );
-
-add_action( 'after_setup_theme', function() {
-	add_theme_support( 'custom-header',
-		[
-			'default-text-color' => 'ffffff',
-			'default-image'      => get_parent_theme_file_uri( '/public/images/header-cross.png' ),
-			'height'             => 1200,
-			'max-width'          => 2000,
-			'width'              => 2000,
-			'flex-height'        => false,
-			'flex-width'         => false,
-		]
-	);
-
-	register_default_headers( [
-		'header-image' => [
-			'url'           => '%s/public/images/header-cross.png',
-			'thumbnail_url' => '%s/public/images/header-cross.png',
-			'description'   => esc_html__( 'Header Image', 'prismatic' ),
-		],
-	] );
-} );
 
 add_action( 'after_setup_theme', function() {
 	add_theme_support( 'custom-background', [

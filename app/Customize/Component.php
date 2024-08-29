@@ -72,6 +72,9 @@ class Component implements Bootable {
 			'registerSettings',
 			'registerControls'
 		] );
+
+		add_action('wp_enqueue_scripts', [$this, 'enqueueCustomizerStyles']);
+		add_action('wp_enqueue_scripts', [$this, 'enqueueBackgroundStyles']);
 	}
 
 	/**
@@ -114,6 +117,10 @@ class Component implements Bootable {
 	 * @return void
 	 */
     public function registerSections( WP_Customize_Manager $manager ) {
+		$manager->get_section( 'custom_css' )->panel = 'theme_global';
+		$manager->get_section( 'title_tagline' )->panel = 'theme_header';
+		$manager->get_section( 'static_front_page' )->panel = 'theme_content';
+
 
 		foreach ( $this->components as $component ) {
 
@@ -151,6 +158,46 @@ class Component implements Bootable {
 		foreach ( $this->components as $component ) {
 
 			App::resolve( $component )->registerControls( $manager );
+		}
+	}
+
+	public function enqueueCustomizerStyles() {
+		$background = get_theme_mod( 'theme_header_background_color', '#0b5e79' );
+		$custom = "
+			.site-header {
+				background: {$background};
+			}
+		";
+
+		wp_add_inline_style( 'prismatic-screen', $custom );
+
+	}
+
+	public function enqueueBackgroundStyles() {
+		$bg_type = get_theme_mod('theme_global_background_type', 'none');
+		$bg_pattern = get_theme_mod('theme_global_background_pattern', 'none');
+		$bg_image = get_background_image();
+		$patterns = Config::get('background-patterns');
+
+		$custom_css = '';
+
+		if ($bg_type === 'image' && $bg_image) {
+			$custom_css = 'body.custom-background { background-image: url("' . esc_url($bg_image) . '"); background-size: cover; }';
+		} elseif ($bg_type === 'pattern' && isset($patterns[$bg_pattern])) {
+			$pattern_svg = $patterns[$bg_pattern]['svg'];
+			$pattern_svg_base64 = base64_encode($pattern_svg); // phpcs:ignore
+			$custom_css = 'body.custom-background {
+				background-color: rgba(255, 255, 255, 0.9); /* Lighter background color with opacity */
+				background-image: url("data:image/svg+xml;base64,' . $pattern_svg_base64 . '");
+				background-repeat: repeat;
+				background-blend-mode: lighten; /* Blend the pattern with the lighter background color */
+			}';
+		} elseif ($bg_type === 'none') {
+			$custom_css = 'body.custom-background { background-image: none; }';
+		}
+
+		if (!empty($custom_css)) {
+			wp_add_inline_style('prismatic-screen', $custom_css);
 		}
 	}
 }
