@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.5 - TBD
+
+### Added
+- Added Theme: Content Layouts
+
 ## 0.0.4 - 08.29.2024
 
 ### Enhancement

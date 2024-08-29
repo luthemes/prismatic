@@ -6,7 +6,6 @@ use WP_Customize_Manager;
 use WP_Customize_Control;
 use Prismatic\Tools\Collection;
 use Prismatic\Tools\Mod;
-use Prismatic\Template\Footer;
 use Prismatic\Tools\Config;
 
 class Customize extends Customizable {

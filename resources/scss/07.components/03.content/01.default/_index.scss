@@ -63,3 +63,69 @@
 		}
 	}
 }
+
+.right-sidebar {
+	.content-area {
+		float: left;
+		line-height: 1.8rem;
+		width: 72.820512820512821%;
+
+		@media screen and ( max-width: 600px ) {
+			.content-area {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.post {
+			background: #ffffff;
+			border: 0.063rem dotted #5394a8;
+			border-bottom: 0.063rem solid #5394a8;
+			margin-top: 1.125rem;
+			padding: 1.125rem;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			.entry-header {
+				text-align: center;
+
+				.entry-title {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+
+		.page {
+			background: #ffffff;
+			border: 0.063rem dotted #5394a8;
+			border-bottom: 0.063rem solid #5394a8;
+			padding: 1.125rem;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			.entry-header {
+				text-align: center;
+
+				.entry-title {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.widget-area {
+		float: right;
+		width: 25.641025641025641%;
+
+		@media screen and ( max-width: 600px ) {
+			float: none;
+			width: 100%;
+		}
+	}
+}

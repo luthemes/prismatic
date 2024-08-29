@@ -17,6 +17,8 @@ use Backdrop\Contracts\Bootable;
 use Prismatic\Tools\Config;
 use Prismatic\Tools\Mod;
 use Backdrop\App;
+use function Backdrop\Mix\asset;
+use Prismatic\Tools\Collection;
 
 use WP_Customize_Manager;
 use WP_Customize_Color_Control;
@@ -72,6 +74,10 @@ class Component implements Bootable {
 			'registerSettings',
 			'registerControls'
 		] );
+		
+		// Enqueue scripts and styles.
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
+		add_action( 'customize_preview_init',             [ $this, 'previewEnqueue' ] );
 
 		add_action('wp_enqueue_scripts', [$this, 'enqueueCustomizerStyles']);
 		add_action('wp_enqueue_scripts', [$this, 'enqueueBackgroundStyles']);
@@ -160,6 +166,37 @@ class Component implements Bootable {
 			App::resolve( $component )->registerControls( $manager );
 		}
 	}
+
+	/**
+	 * Register or enqueue scripts/styles for the controls that are output
+	 * in the controls frame.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function controlsEnqueue() {
+
+		wp_enqueue_style( 'prismatic-customize-controls', asset( 'assets/css/customize-controls.css' ), [], null );
+		wp_enqueue_script( 'prismatic-customize-controls', asset( 'assets/css/customize-controls.js' ), null, true );
+	}
+
+	/**
+	 * Register or enqueue scripts/styles for the live preview frame.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function previewEnqueue() {
+
+		// Enqueue preview style.
+		wp_enqueue_style( 'prismatic-customize-preview', asset( 'assets/css/customize-preview.css' ), [], null );
+
+		// Enqueue preview script.
+		wp_enqueue_script( 'prismatic-customize-preview', asset( 'assets/js/customize-preview.js' ), [ 'customize-preview' ], null, true );
+	}
+
 
 	public function enqueueCustomizerStyles() {
 		$background = get_theme_mod( 'theme_header_background_color', '#0b5e79' );

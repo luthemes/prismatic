@@ -1,1 +1,33 @@
+li.customize-control-radio-image input[type=radio] {
+  display: none;
+}
 
+li.customize-control-radio-image label,
+li.customize-control-radio-image input,
+li.customize-control-radio-image img {
+  outline: none !important;
+  -o-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+li.customize-control-radio-image label {
+  display: inline-block;
+}
+
+li.customize-control-radio-image img {
+  width: 100%;
+  height: auto;
+  border: 4px solid transparent;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+li.customize-control-radio-image img:hover,
+li.customize-control-radio-image img:focus {
+  border-color: #ccc;
+}
+
+li.customize-control-radio-image input:checked + img {
+  border-color: #00a0d2;
+}

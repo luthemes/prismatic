@@ -15,9 +15,9 @@ namespace Prismatic\Customize;
 
 use Backdrop\Tools\Collection;
 use Backdrop\Core\ServiceProvider;
-use Prismatic\Layout;
+use Prismatic\Customize\Background;
 use Prismatic\Customize\Footer;
-
+use Prismatic\Customize\Layout;
 /**
  * Customize service provider.
  *
@@ -39,6 +39,8 @@ class Provider extends ServiceProvider {
 			return new Component( [
 				Background\Customize::class,
 				Footer\Customize::class,
+				Layout\Customize::class,
+				
 			] );
 		} );
 	}
