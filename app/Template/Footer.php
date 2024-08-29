@@ -50,8 +50,6 @@ class Footer {
 
 		$text = Mod::get( 'theme_footer_powered_by' ) ? PoweredBy::render() : Mod::get( 'theme_footer_custom_credit' );
 
-		echo Mod::get( 'theme_footer_powered_by');
-
 		return sprintf(
 			'%s%s%s',
 			$args['before'],

@@ -16,6 +16,7 @@ namespace Prismatic\Customize;
 use Backdrop\Tools\Collection;
 use Backdrop\Core\ServiceProvider;
 use Prismatic\Layout;
+use Prismatic\Customize\Footer;
 
 /**
  * Customize service provider.
@@ -34,7 +35,11 @@ class Provider extends ServiceProvider {
 	 */
 	public function register(): void {
 
-		$this->app->singleton( 'prismatic/customize/default', Component::class );
+		$this->app->singleton( Component::class, function() {
+			return new Component( [
+				Footer\Customize::class,
+			] );
+		} );
 	}
 
 	/**

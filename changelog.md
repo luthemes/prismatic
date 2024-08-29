@@ -1,6 +1,11 @@
 # Change Log
 
-## 0.0.3 - 08.28, 2024
+## 0.0.4 - 08.28.2024
+
+### Added
+- Add Settings Page
+
+## 0.0.3 - 08.28.2024
 
 ### Enhancement
 - Added seperation for metadata and comments

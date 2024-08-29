@@ -46,41 +46,50 @@ return [
             'priority' => 5,
             'panel' => 'theme_global',
         ],
+		'theme_global_layout' => [
+            'title' => __( 'Layout', 'prismatic' ),
+            'priority' => 5,
+            'panel' => 'theme_global',
+        ],
+
         'theme_header_background' => [
             'title' => __( 'Background', 'prismatic' ),
             'priority' => 5,
             'panel' => 'theme_header',
         ],
+
         'theme_content_background' => [
             'title' => __( 'Background', 'prismatic' ),
             'priority' => 5,
             'panel' => 'theme_content',
         ],
+
         'theme_footer_background' => [
             'title' => __( 'Background', 'prismatic' ),
             'priority' => 5,
             'panel' => 'theme_footer',
         ],
-		'theme_global_layout' => [
-            'title' => __( 'Layout', 'prismatic' ),
-            'priority' => 5,
-            'panel' => 'theme_global',
-		]
+        'theme_footer_powered_by' => [
+            
+        ]
 	],
 
     'settings' => [
         'theme_header_background_color' => [
-            'default' => '0b5e79',
+            'default' => '#0b5e79',
             'sanitize_callback' => 'sanitize_hex_color',
         ],
+
         'theme_content_background_color' => [
             'default' => 'f0f0f0',
             'sanitize_callback' => 'sanitize_hex_color',
         ],
+
         'theme_footer_background_color' => [
             'default' => '#0b5e79',
             'sanitize_callback' => 'sanitize_hex_color',
         ],
+
 		'theme_global_layout_options' => [
 			'default' => Mod::fallback( 'layout' ),
 			'sanitize_callback' => 'Backdrop\Customize\Helpers\Sanitize::layouts',
@@ -92,15 +101,18 @@ return [
             'section' => 'theme_header_background',
             'label' => __( 'Background Color', 'prismatic' ),
         ],
+
         'theme_content_background_color' => [
             'type' => 'WP_Customize_Color_Control',
             'section' => 'theme_content_background',
         ],
+
         'theme_footer_background_color' => [
             'type' => 'WP_Customize_Color_Control',
             'section' => 'theme_footer_background',
             'label' => __( 'Color', 'prismatic' ),
         ],
+
 		'theme_global_layout_options' => [
             'label' => __( 'Global Layout', 'prismatic' ),
 			'description' => __( 'Select the layout used across the site.', 'prismatic' ),
