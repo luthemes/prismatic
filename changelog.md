@@ -4,6 +4,7 @@
 
 ### Enhancement
 - Reorganized Background Image with Patterns
+- Styled Pagination for pagination.
 
 ### Added
 - Added Settings Page

@@ -30,6 +30,7 @@ $theme = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
 $theme->provider( Backdrop\Fonts\Provider::class );
 $theme->provider( Backdrop\Languages\Provider::class );
 $theme->provider( Backdrop\Mix\Provider::class );
+$theme->provider( Backdrop\Pagination\Provider::class );
 $theme->provider( Backdrop\Template\Hierarchy\Provider::class );
 $theme->provider( Backdrop\Template\Manager\Provider::class );
 $theme->provider( Backdrop\Theme\Provider::class );

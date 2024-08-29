@@ -560,6 +560,83 @@ h6 {
   font-weight: 700;
 }
 
+/* Container Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pagination__title {
+  margin-right: 0.5rem;
+}
+
+/* List Styling */
+.pagination__items {
+  list-style-type: none;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* Item Styling */
+.pagination__item {
+  margin-right: 0.75rem;
+}
+
+/* Common Anchor Styles */
+.pagination__anchor {
+  display: block;
+  padding: 0.25rem 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Current Page Styles */
+.pagination__anchor--current {
+  background-color: #333; /* Replace with your primary color */
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+/* Number Links */
+.pagination__anchor--link {
+  color: #333;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+/* Hover and Focus States */
+.pagination__anchor--link:hover,
+.pagination__anchor--link:focus {
+  background-color: #333;
+  color: #fff;
+}
+
+/* "Next" Button Styles */
+.pagination__item--next .pagination__anchor--link {
+  padding-right: 1.25rem; /* Space for arrow */
+}
+
+.pagination__item--next .pagination__anchor::after {
+  margin-left: 0.5rem;
+}
+
+/* Small Screens Adjustments */
+@media (max-width: 640px) {
+  .pagination__item {
+    margin-right: 0.5rem;
+  }
+  .pagination__anchor {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
 .left-sidebar .content-area {
   float: right;
   line-height: 1.8rem;
