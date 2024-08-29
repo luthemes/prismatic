@@ -12,9 +12,8 @@
  */
 
 namespace Prismatic\Template;
-
+use Prismatic\Tools\PoweredBy;
 use Prismatic\Tools\Mod;
-// use Exhale\Tools\PoweredBy;
 
 /**
  * Powered by class.
@@ -45,13 +44,13 @@ class Footer {
 	public static function renderCredit( array $args = [] ) {
 
 		$args = wp_parse_args( $args, [
-			'before' => '<p class="app-footer__credit my-4 text-center">',
+			'before' => '<p class="app-footer__credit">',
 			'after'  => '</p>'
 		] );
 
-		$text = Mod::get( 'powered_by' )
-		        ? PoweredBy::render()
-			: Mod::get( 'footer_credit' );
+		$text = Mod::get( 'theme_footer_powered_by' ) ? PoweredBy::render() : Mod::get( 'theme_footer_custom_credit' );
+
+		echo Mod::get( 'theme_footer_powered_by');
 
 		return sprintf(
 			'%s%s%s',
@@ -79,7 +78,8 @@ class Footer {
 			'em'      => [ 'class' => true ],
 			'i'       => [ 'class' => true ],
 			'span'    => [ 'class' => true ],
-			'strong'  => [ 'class' => true ]
+			'strong'  => [ 'class' => true ],
+			'br'	  => [ 'class' => true ]
 		];
 	}
 
