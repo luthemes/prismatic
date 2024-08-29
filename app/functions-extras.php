@@ -12,6 +12,7 @@
 namespace Prismatic;
 
 use function Backdrop\Fonts\enqueue;
+use Prismatic\Template\ErrorPage;
 
 /**
  * Changes the theme template path to the `public/views` folder.
@@ -60,4 +61,23 @@ add_filter( 'body_class', function( $classes ) {
 	}
 
 	return $classes;
+} );
+
+/**
+ * Adds error data for the 404 content template. Passes in the `ErrorPage` object
+ * as the `$error` variable.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  Backdrop\Tools\Collection  $data
+ * @return Backdrop\Tools\Collection
+ */
+add_filter( 'backdrop/view/content/data', function( $data ) {
+
+	if ( is_404() ) {
+		$data->add( 'error', new ErrorPage() );
+	}
+
+	return $data;
+
 } );
