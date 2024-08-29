@@ -232,6 +232,7 @@ class General extends View {
 
 		$dropdown = wp_dropdown_pages( [
 			'name'              => 'Prismatic_settings[error_page]',
+			'show_option_none'  => '-',
 			'option_none_value' => 0,
 			'selected'          => Options::get( 'error_page' ), // phpcs:ignore
 			'post_status'       => [ 'private' ],
