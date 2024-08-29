@@ -5,6 +5,6 @@
 	'anchor_class'    => 'pagination__anchor pagination__anchor--%s block leading-none py-3 px-4 no-underline',
 	'show_all'        => true,
 	'prev_next'       => false,
-	'title_text'      => __( 'Pages:', 'amicable' ),
+	'title_text'      => __( 'Pages:', 'prismatic' ),
 	'title_class'     => 'pagination__title'
 ] ); ?>
