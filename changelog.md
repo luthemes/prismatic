@@ -6,7 +6,9 @@
 - Reorganized Background Image with Patterns
 
 ### Added
-- Add Settings Page
+- Added Settings Page
+- Added Custom ErrorPage
+- Added Footer Credit and Show Random quotes
 
 ## 0.0.3 - 08.28.2024
 
