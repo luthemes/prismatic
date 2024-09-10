@@ -66,6 +66,12 @@ h6 {
   margin: 2.33em 0;
 }
 
+a {
+  color: #0b5e79;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 .site-header {
   background: #0b5e79;
   padding: 0.5rem;

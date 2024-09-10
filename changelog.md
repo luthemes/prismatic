@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.6 - 09.10.2024
+
+### Enhancement
+- Style Search Widget
+
 ## 0.0.5 - 08.29.2024
 
 ### Added
