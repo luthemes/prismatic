@@ -4,6 +4,7 @@
 
 ### Enhancement
 - Style Search Widget
+- Updated Links
 
 ## 0.0.5 - 08.29.2024
 
