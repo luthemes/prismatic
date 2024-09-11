@@ -42,40 +42,49 @@ li.customize-control-radio-image input:checked + img {
     opacity: 0;
 }
 
-/* Style the SVG container to display one item per line */
-.svg-patterns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* 2 items per row (Radio button and SVG) */
-    grid-gap: 5px; /* Space between each item */
-    margin-top: 10px;
-    width: 100%;
+/* Hide the radio buttons but keep them functional */
+.svg-patterns input[type="radio"] {
+    position: absolute;
+    opacity: 0;
 }
 
-/* Ensure each label spans the full width and centers content */
+/* Each label should be a flexbox row */
 .svg-patterns label {
-    display: flex; /* Flexbox layout for easy alignment */
-    align-items: center; /* Vertically align SVG and text */
-    justify-content: space-between; /* Space between the radio button (hidden) and SVG */
-    padding: 5px;
-    width: 100%; /* Full width for each row */
-    cursor: pointer; /* Make the SVG clickable */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px; /* Space between each option */
+    border: 1px solid #ddd; /* Default border */
+	background: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; /* Full width for the label */
+    box-sizing: border-box; /* Include padding in width */
 }
 
-/* Style the SVG previews */
+/* Space between the radio button and the background preview */
+.svg-patterns label > input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and SVG */
+}
+
+/* Set the SVG as a background */
 .svg-patterns .svg-preview {
-	border: 4px solid red;
-    width: 45px;
-    height: 45px;
-    display: inline-block;
+	background: #ffffff;
+    width: 100%; /* Fixed width for the preview box */
+    height: 64px; /* Fixed height for the preview box */
+    background-repeat: repeat; /* Prevent repetition of the SVG */
+    border-radius: 5px;
+}
+
+/* Style the label text */
+.svg-patterns .pattern-label {
+    font-weight: bold;
+    flex-grow: 1; /* Ensure the label text grows to fill the space */
 }
 
 /* Highlight the selected SVG when its radio button is checked */
 .svg-patterns input[type="radio"]:checked + .svg-preview {
-    border: 4px solid #0073aa; /* Add a border to highlight the selected SVG */
-    background-color: #f0f0f0; /* Optional background color */
-}
-
-.svg-patterns .svg-preview .background-pattern-svg svg {
-	height: 45px;
-	width: 45px;
+    border: 2px solid #0073aa; /* Blue border for selected SVG */
+    background-color: #e0e0e0; /* Optional background color change */
 }

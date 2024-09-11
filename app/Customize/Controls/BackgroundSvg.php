@@ -46,20 +46,23 @@ class BackgroundSvg extends \WP_Customize_Control {
         <?php endif; ?>
 
         <div id="input_<?php echo esc_attr( $this->id ); ?>" class="svg-patterns">
-            <?php foreach ( $this->choices as $value => $svg ) : ?>
-                <label for="<?php echo esc_attr( $this->id . '_' . $value ); ?>">
-                    <input class="svg-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo esc_attr( $this->id . '_' . $value ); ?>" name="<?php echo esc_attr( $name ); ?>"
-                        <?php
-                        $this->link();
-                        checked( $this->value(), esc_attr( $value ) );
-                        ?>
-                    >
-                    <!-- Display the SVG directly -->
-                    <span class="svg-preview">
-                        <?php echo $svg; //phpcs:ignore ?>
-                    </span>
-                </label>
-            <?php endforeach; ?>
+        <?php foreach ( $this->choices as $value => $svg ) : ?>
+    <label for="<?php echo esc_attr( $this->id . '_' . $value ); ?>">
+        <input class="svg-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo esc_attr( $this->id . '_' . $value ); ?>" name="<?php echo esc_attr( $name ); ?>"
+            <?php
+            $this->link();
+            checked( $this->value(), esc_attr( $value ) );
+            ?>
+        >
+        <!-- Encode the SVG to use as a background-image -->
+        <span class="svg-preview" style="
+            background-image: url('data:image/svg+xml,<?php echo rawurlencode( $svg ); ?>');
+        "></span>
+    </label>
+<?php endforeach; ?>
+
+
+
         </div>
         <?php
     }

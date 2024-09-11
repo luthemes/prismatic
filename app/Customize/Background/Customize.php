@@ -90,7 +90,7 @@ class Customize extends Customizable {
 		$pattern_choices = array('none' => __('None', 'prismatic'));
 		foreach ( $patterns as $key => $pattern ) {
 			// Since $pattern['svg'] contains the actual SVG markup, ensure that it's echoed correctly
-			$pattern_choices[$key] = sprintf( '<span class="background-pattern-svg">%s</span>', $pattern['svg'] );
+			$pattern_choices[$key] = sprintf( '%s', $pattern['svg'] );
 		}
 
 		$manager->add_control(new BackgroundSvg($manager, 'theme_global_background_pattern', array(
