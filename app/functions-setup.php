@@ -133,3 +133,26 @@ add_action( 'after_setup_theme', function() {
 		'default-image' => '',
 	] );
 } );
+
+/**
+ * Registers custom templates with ClassicPress.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  object  $templates
+ * @return void
+ */
+add_action( 'backdrop/templates/register', function( $templates ) {
+
+	$templates->add( 'template-left-sidebar.php', [
+		'label' => esc_html__( 'Left Sidebar', 'prismatic' )
+	] );
+
+	$templates->add( 'template-right-sidebar.php', [
+		'label' => esc_html__( 'Right Sidebar', 'prismatic' )
+	] );
+
+	$templates->add( 'template-custom-sidebar.php', [
+		'label' => esc_html__( 'Custom Sidebar', 'prismatic' )
+	] );
+} );
