@@ -42,7 +42,7 @@ li.customize-control-radio-image input:checked + img {
 .svg-patterns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; /* 2 items per row (Radio button and SVG) */
-  grid-gap: 8px; /* Space between each item */
+  grid-gap: 5px; /* Space between each item */
   margin-top: 10px;
   width: 100%;
 }
@@ -59,7 +59,7 @@ li.customize-control-radio-image input:checked + img {
 
 /* Style the SVG previews */
 .svg-patterns .svg-preview {
-  border: 2px solid red;
+  border: 4px solid red;
   width: 45px;
   height: 45px;
   display: inline-block;
@@ -67,7 +67,7 @@ li.customize-control-radio-image input:checked + img {
 
 /* Highlight the selected SVG when its radio button is checked */
 .svg-patterns input[type=radio]:checked + .svg-preview {
-  border: 2px solid #0073aa; /* Add a border to highlight the selected SVG */
+  border: 4px solid #0073aa; /* Add a border to highlight the selected SVG */
   background-color: #f0f0f0; /* Optional background color */
 }
 
