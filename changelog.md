@@ -1,6 +1,11 @@
 # Change Log
 
-## 0.0.7 - 09.11.2024
+## 0.0.8 - 09.10.2024
+
+### Enhancement
+- Improved Background Patterns more better in Customizer
+
+## 0.0.7 - 09.10.2024
 
 ### Enhancement
 - Improved Background Patterns in Customizer
