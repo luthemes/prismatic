@@ -8,6 +8,8 @@ use Prismatic\Tools\Collection;
 use Prismatic\Tools\Mod;
 use Prismatic\Tools\Config;
 
+use Prismatic\Customize\Controls\BackgroundSvg;
+
 class Customize extends Customizable {
 
 	/**
@@ -86,22 +88,22 @@ class Customize extends Customizable {
 		$patterns = Config::get( 'background-patterns' );
 
 		$pattern_choices = array('none' => __('None', 'prismatic'));
-		foreach ($patterns as $key => $pattern) {
-			$pattern_choices[$key] = $pattern['label'];
+		foreach ( $patterns as $key => $pattern ) {
+			// Since $pattern['svg'] contains the actual SVG markup, ensure that it's echoed correctly
+			$pattern_choices[$key] = sprintf( '<span class="background-pattern-svg">%s</span>', $pattern['svg'] );
 		}
 
-		// Add control for background pattern
-		$manager->add_control(new WP_Customize_Control($manager, 'theme_global_background_pattern', array(
+		$manager->add_control(new BackgroundSvg($manager, 'theme_global_background_pattern', array(
 			'label' => __('Background Pattern', 'prismatic'),
 			'section' => 'theme_global_background',
 			'settings' => 'theme_global_background_pattern',
-			'type' => 'radio',
 			'choices' => $pattern_choices,
 			'active_callback' => function() use ($manager) {
 				return $manager->get_setting('theme_global_background_type')->value() == 'pattern';
 			},
 			'priority' => 40, // Set priority to ensure it appears after the image control
 		)));
+		
 
 		// Modify the existing background image control to be hidden when not selecting image type
 		$manager->get_control('background_image')->active_callback = function() use ($manager) {

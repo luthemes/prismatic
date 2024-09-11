@@ -35,3 +35,47 @@ li.customize-control-radio-image img:focus {
 li.customize-control-radio-image input:checked + img {
 	border-color: #00a0d2;
 }
+
+/* Hide the radio buttons but keep them functional */
+.svg-patterns input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Style the SVG container to display one item per line */
+.svg-patterns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 2 items per row (Radio button and SVG) */
+    grid-gap: 8px; /* Space between each item */
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Ensure each label spans the full width and centers content */
+.svg-patterns label {
+    display: flex; /* Flexbox layout for easy alignment */
+    align-items: center; /* Vertically align SVG and text */
+    justify-content: space-between; /* Space between the radio button (hidden) and SVG */
+    padding: 5px;
+    width: 100%; /* Full width for each row */
+    cursor: pointer; /* Make the SVG clickable */
+}
+
+/* Style the SVG previews */
+.svg-patterns .svg-preview {
+	border: 2px solid red;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+}
+
+/* Highlight the selected SVG when its radio button is checked */
+.svg-patterns input[type="radio"]:checked + .svg-preview {
+    border: 2px solid #0073aa; /* Add a border to highlight the selected SVG */
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+.svg-patterns .svg-preview .background-pattern-svg svg {
+	height: 45px;
+	width: 45px;
+}
