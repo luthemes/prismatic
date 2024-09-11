@@ -1,14 +1,23 @@
 <?php
-
+/**
+ * 
+ * @package   Prismatic
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2024 Benjamin Lu
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html
+ * @link      https://luthemes.com/portfolio/prismatic
+ */
 namespace Prismatic\Customize\Background;
+
+use Backdrop\Customize\Controls\BackgroundSvg;
+
 use Prismatic\Customize\Customizable;
-use WP_Customize_Manager;
-use WP_Customize_Control;
 use Prismatic\Tools\Collection;
 use Prismatic\Tools\Mod;
 use Prismatic\Tools\Config;
 
-use Prismatic\Customize\Controls\BackgroundSvg;
+use WP_Customize_Manager;
+use WP_Customize_Control;
 
 class Customize extends Customizable {
 
