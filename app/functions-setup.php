@@ -113,8 +113,8 @@ add_action( 'widgets_init', function() {
 			'name' => esc_html__( 'Primary', 'prismatic' )
 		],
 		[
-			'id' => 'secondary',
-			'name' => esc_html__( 'Secondary', 'prismatic' )
+			'id' => 'subsidiary',
+			'name' => esc_html__( 'Subsidiary', 'prismatic' )
 		],
 		[
 			'id' => 'custom',
