@@ -56,7 +56,7 @@ class BackgroundSvg extends \WP_Customize_Control {
                     >
                     <!-- Display the SVG directly -->
                     <span class="svg-preview">
-                        <?php echo $svg; // Output the SVG directly, no escaping ?>
+                        <?php echo $svg; //phpcs:ignore ?>
                     </span>
                 </label>
             <?php endforeach; ?>
