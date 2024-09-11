@@ -71,6 +71,7 @@ li.customize-control-radio-image input:checked + img {
 /* Set the SVG as a background */
 .svg-patterns .svg-preview {
 	background: #ffffff;
+
     width: 100%; /* Fixed width for the preview box */
     height: 64px; /* Fixed height for the preview box */
     background-repeat: repeat; /* Prevent repetition of the SVG */
