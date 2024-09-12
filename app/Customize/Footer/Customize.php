@@ -3,6 +3,7 @@
 namespace Prismatic\Customize\Footer;
 use Prismatic\Customize\Customizable;
 use WP_Customize_Manager;
+use WP_Customize_Color_Control;
 use Prismatic\Tools\Collection;
 use Prismatic\Tools\Mod;
 use Prismatic\Template\Footer;
@@ -19,6 +20,11 @@ class Customize extends Customizable {
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
 
+		$manager->add_section( 'theme_footer_background', [
+			'title' => esc_html__( 'Colors', 'prismatic' ),
+			'panel' => 'theme_footer',
+		] );
+
 		$manager->add_section( 'theme_footer_credit', [
 			'title' => esc_html__( 'Credit', 'prismatic' ),
 			'panel' => 'theme_footer',
@@ -34,6 +40,12 @@ class Customize extends Customizable {
 	 * @return void
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
+
+		$manager->add_setting( 'theme_footer_background_color', [
+			'default' => '#0b5e79',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport' => 'postMessage'
+		] );
 
 		// Register footer settings.
 		$manager->add_setting( 'theme_footer_powered_by', [
@@ -59,6 +71,12 @@ class Customize extends Customizable {
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
+
+		$manager->add_control( new WP_Customize_Color_Control( $manager, 'theme_footer_background_color', [
+			'label' => esc_html__( 'Background Color', 'prismatic' ),
+			'section' => 'theme_footer_background',
+			'settings' => 'theme_footer_background_color'
+		] ) );
 
 		// Powered by control.
 		$manager->add_control( 'theme_footer_powered_by', [
