@@ -177,7 +177,7 @@ add_action( 'after_setup_theme', function() {
 		'header-image' => [
 			'url'           => '%s/public/images/header-image.jpg',
 			'thumbnail_url' => '%s/public/images/header-image.jpg',
-			'description'   => esc_html__( 'Header Image', 'creativity' ),
+			'description'   => esc_html__( 'Header Image', 'prismatic' ),
 		],
 	] );
 } );
