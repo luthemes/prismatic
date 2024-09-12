@@ -39,6 +39,7 @@ class Provider extends ServiceProvider {
 			return new Component( [
 				Background\Customize::class,
 				Footer\Customize::class,
+				Header\Customize::class,
 				Layout\Customize::class,
 				
 			] );
