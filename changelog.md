@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0 - 09.12.2024
+
+### Added
+- Add Background Colors for Header and Footer.
+- Add Custom Header with the ability to change text color. 
+
 ## 0.0.9 - 09.11.2024
 
 ### Added
