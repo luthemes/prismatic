@@ -191,24 +191,36 @@ class Component implements Bootable {
 	public function previewEnqueue() {
 
 		// Enqueue preview style.
-		wp_enqueue_style( 'prismatic-customize-preview', asset( 'assets/css/customize-preview.css' ), [], null );
+		wp_enqueue_style( 'prismatic-customize-preview', asset( 'assets/css/customize-previews.css' ), [], null );
 
 		// Enqueue preview script.
-		wp_enqueue_script( 'prismatic-customize-preview', asset( 'assets/js/customize-preview.js' ), [ 'customize-preview' ], null, true );
+		wp_enqueue_script( 'prismatic-customize-preview', asset( 'assets/js/customize-previews.js' ), [ 'customize-preview' ], null, true );
 	}
 
 
 	public function enqueueCustomizerStyles() {
-		$background = get_theme_mod( 'theme_header_background_color', '#0b5e79' );
-		$custom = "
-			.site-header {
-				background: {$background};
+		$text_color = get_header_textcolor();
+		$footer_background = get_theme_mod( 'theme_footer_background_color' );
+
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $text_color ) {
+			return;
+		}
+
+		$value = display_header_text() ? sprintf( 'color: #%s', esc_html( $text_color ) ) : 'display: none;';
+		
+		$custom_css = "
+			.site-header .branding-navigation .site-branding .site-title a,
+			.site-header .branding-navigation .site-branding .site-description {
+				$value
+			}
+
+			.site-footer {
+				background: {$footer_background};
 			}
 		";
-
-		wp_add_inline_style( 'prismatic-screen', $custom );
-
+		wp_add_inline_style( 'prismatic-screen', $custom_css );
 	}
+	
 
 	public function enqueueBackgroundStyles() {
 		$bg_type = get_theme_mod('theme_global_background_type', 'none');
