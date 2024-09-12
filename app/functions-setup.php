@@ -156,3 +156,28 @@ add_action( 'backdrop/templates/register', function( $templates ) {
 		'label' => esc_html__( 'Custom Sidebar', 'prismatic' )
 	] );
 } );
+
+/**
+ * Add support for custom header.
+ */
+add_action( 'after_setup_theme', function() {
+	add_theme_support( 'custom-header',
+		[
+			'default-text-color' => 'ffffff',
+			'default-image'      => '',
+			'height'             => 1200,
+			'max-width'          => 2000,
+			'width'              => 2000,
+			'flex-height'        => false,
+			'flex-width'         => false,
+		]
+	);
+
+	register_default_headers( [
+		'header-image' => [
+			'url'           => '%s/public/images/header-image.jpg',
+			'thumbnail_url' => '%s/public/images/header-image.jpg',
+			'description'   => esc_html__( 'Header Image', 'creativity' ),
+		],
+	] );
+} );
