@@ -144,6 +144,10 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'backdrop/templates/register', function( $templates ) {
 
+	$templates->add( 'template-home.php', [
+		'label' => esc_html__( 'Home', 'prismatic' )
+	] );
+
 	$templates->add( 'template-left-sidebar.php', [
 		'label' => esc_html__( 'Left Sidebar', 'prismatic' )
 	] );
@@ -165,7 +169,7 @@ add_action( 'after_setup_theme', function() {
 		[
 			'default-text-color' => 'ffffff',
 			'default-image'      => '',
-			'height'             => 1200,
+			'height'             => 300,
 			'max-width'          => 2000,
 			'width'              => 2000,
 			'flex-height'        => false,
@@ -181,3 +185,4 @@ add_action( 'after_setup_theme', function() {
 		],
 	] );
 } );
+
