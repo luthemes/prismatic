@@ -44,3 +44,35 @@ use function Backdrop\Mix\asset;
 		wp_enqueue_script( 'comment-reply' );
 	}
 } );
+
+add_action('wp_enqueue_scripts', function() {
+
+	$custom_image = get_header_image();
+
+	$custom_css = "
+			.site-intro {
+				background: url({$custom_image});
+				background-size: cover !important;
+				box-sizing: border-box;
+				padding: 8rem 0;
+			}
+
+			.site-intro .intro-header-title {
+				color: #ffffff;
+				font-size: 3rem;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			.site-intro .intro-header-description {
+				line-height: 1.8rem;
+				color: #ffffff;
+				margin: 0 auto;
+				max-width: 768px;
+				text-align: center;
+			}
+		";
+	wp_add_inline_style( 'prismatic-screen', $custom_css );
+}
+);
