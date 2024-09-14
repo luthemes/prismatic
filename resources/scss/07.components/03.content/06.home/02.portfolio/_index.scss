@@ -1,0 +1,62 @@
+.site-portfolio {
+    padding: 1.125rem;
+    text-align: center;
+
+    .portfolio-header {
+
+        .portfolio-header-title {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .portfolio-content {
+        margin: 1.125rem auto;
+        max-width: 1200px;
+
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            grid-gap: 1.125rem;
+
+            li {
+                position: relative; /* Ensure the caption stays within the bounds of the image */
+
+                img {
+                    border-radius: 0.5rem;
+                    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+                    display: block;
+                    width: 100%; /* Make sure the image fits well */
+                }
+
+                .wp-caption {
+                    position: absolute;
+                    bottom: 0; /* Stick to the bottom of the image */
+                    left: 0;
+                    right: 0;
+                    background: rgba( 0, 0, 0, 0.8 ); /* Add some opacity to the background */
+                    color: #fff; /* White text for contrast */
+                    padding: 0.5rem;
+                    text-align: center;
+
+                    .wp-caption-text {
+                        margin: 0.25rem 0;
+                        padding: 0;
+
+                        a { 
+                            text-decoration: none;
+                            color: #fff; /* Ensure the link text is also white */
+                        }
+                    }
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

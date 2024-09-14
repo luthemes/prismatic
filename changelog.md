@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.1 - 09.14.2024
+
+### Added
+- Portfolio support
+- Custom template for Showcase
+- Recommend Backdrop Custom Portfolio Plugin
+
 ## 0.1.0 - 09.12.2024
 
 ### Added
