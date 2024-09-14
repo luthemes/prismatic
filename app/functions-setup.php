@@ -120,6 +120,10 @@ add_action( 'widgets_init', function() {
 			'id' => 'custom',
 			'name' => esc_html__( 'Custom', 'prismatic' )
 		],
+		[
+			'id' => 'portfolio',
+			'name' => esc_html__( 'Portfolio', 'prismatic' )
+		],
 	];
 
 	foreach ( $sidebars as $sidebar ) {
@@ -146,6 +150,10 @@ add_action( 'backdrop/templates/register', function( $templates ) {
 
 	$templates->add( 'template-home.php', [
 		'label' => esc_html__( 'Home', 'prismatic' )
+	] );
+
+	$templates->add( 'template-showcase.php', [
+		'label' => esc_html__( 'Showcase', 'prismatic' )
 	] );
 
 	$templates->add( 'template-left-sidebar.php', [
