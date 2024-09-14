@@ -20,7 +20,7 @@ class Customize extends Customizable {
 	public function registerPanels( WP_Customize_Manager $manager ) {
 
         $manager->add_panel( 'theme_home', [
-            'title' => esc_html__( 'Theme: Home' ),
+            'title' => esc_html__( 'Theme: Home', 'prismatic' ),
             'priority' => 99
         ] );
     }
