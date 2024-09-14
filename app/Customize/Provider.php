@@ -40,6 +40,7 @@ class Provider extends ServiceProvider {
 				Background\Customize::class,
 				Footer\Customize::class,
 				Header\Customize::class,
+				Home\Customize::class,
 				Layout\Customize::class,
 				
 			] );
