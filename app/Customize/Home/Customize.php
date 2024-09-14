@@ -37,15 +37,15 @@ class Customize extends Customizable {
 
         $args = [
             'theme_home_header' => [
-                'title' => esc_html__( 'Introduction', 'workfolio' ),
+                'title' => esc_html__( 'Introduction', 'prismatic' ),
                 'panel' => 'theme_home'
             ],
             'theme_home_portfolio' => [
-                'title' => esc_html__( 'Portfolio', 'workfolio' ),
+                'title' => esc_html__( 'Portfolio', 'prismatic' ),
                 'panel' => 'theme_home'
             ],
             'theme_home_blog' => [
-                'title' => esc_html__( 'Blog', 'workfolio' ),
+                'title' => esc_html__( 'Blog', 'prismatic' ),
                 'panel' => 'theme_home'
             ],
         ];
@@ -79,27 +79,27 @@ class Customize extends Customizable {
                 'sanitize_callback' => 'Backdrop\Customize\Helpers\Sanitize::checkbox',
             ],
             'theme_home_header_title' => [
-                'default' => esc_html__( 'Our Mission Goes Here', 'workfolio' ),
+                'default' => esc_html__( 'Our Mission Goes Here', 'prismatic' ),
                 'sanitize_callback' => 'sanitize_text_field'
             ],
             'theme_home_header_description' => [
-                'default' => esc_html__( 'Your description goes here!', 'workfolio' ),
+                'default' => esc_html__( 'Your description goes here!', 'prismatic' ),
                 'sanitize_callback' => 'sanitize_textarea_field'
             ],
             'theme_home_portfolio_title' => [
-                'default' => esc_html__( 'Portfolio', 'workfolio' ),
+                'default' => esc_html__( 'Portfolio', 'prismatic' ),
                 'sanitize_callback' => 'sanitize_text_field'
             ],
             'theme_home_portfolio_description' => [
-                'default' => esc_html__( 'Latest Work', 'workfolio' ),
+                'default' => esc_html__( 'Latest Work', 'prismatic' ),
                 'sanitize_callback' => 'sanitize_textarea_field'
             ],
             'theme_home_blog_title' => [
-                'default' => esc_html__( 'Blog', 'workfolio' ),
+                'default' => esc_html__( 'Blog', 'prismatic' ),
                 'sanitize_callback' => 'sanitize_text_field'
             ],
             'theme_home_blog_description' => [
-                'default' => esc_html__( 'Latest Blog', 'workfolio' ),
+                'default' => esc_html__( 'Latest Blog', 'prismatic' ),
                 'sanitize_callback' => 'sanitize_textarea_field'
             ]
         ];
@@ -123,19 +123,19 @@ class Customize extends Customizable {
 
             // Theme: Home - Header
             'theme_home_header_display' => [
-                'label' => esc_html__( 'Enable Introduction', 'workfolio' ),
+                'label' => esc_html__( 'Enable Introduction', 'prismatic' ),
                 'type' => 'checkbox',
                 'section' => 'theme_home_header',
                 'settings' => 'theme_home_header_display'
             ],
             'theme_home_header_title' => [
-                'label' => esc_html__('Title', 'workfolio'),
+                'label' => esc_html__('Title', 'prismatic'),
                 'section' => 'theme_home_header',
                 'priority' => 10,
                 'settings' => 'theme_home_header_title',
             ],
             'theme_home_header_description' => [
-                'label' => esc_html__('Description', 'workfolio'),
+                'label' => esc_html__('Description', 'prismatic'),
                 'section' => 'theme_home_header',
                 'type' => 'textarea',
                 'priority' => 10,
@@ -144,19 +144,19 @@ class Customize extends Customizable {
 
             // Theme: Home - Portfolio
             'theme_home_portfolio_display' => [
-                'label' => esc_html__( 'Enable Portfolio', 'workfolio' ),
+                'label' => esc_html__( 'Enable Portfolio', 'prismatic' ),
                 'type' => 'checkbox',
                 'section' => 'theme_home_portfolio',
                 'settings' => 'theme_home_portfolio_display'
             ],
             'theme_home_portfolio_title' => [
-                'label' => esc_html__('Title', 'workfolio'),
+                'label' => esc_html__('Title', 'prismatic'),
                 'section' => 'theme_home_portfolio',
                 'priority' => 10,
                 'settings' => 'theme_home_portfolio_title',
             ],
             'theme_home_portfolio_description' => [
-                'label' => esc_html__('Description', 'workfolio'),
+                'label' => esc_html__('Description', 'prismatic'),
                 'section' => 'theme_home_portfolio',
                 'type' => 'textarea',
                 'priority' => 10,
@@ -165,19 +165,19 @@ class Customize extends Customizable {
 
             // Theme: Home - Blog
             'theme_home_blog_display' => [
-                'label' => esc_html__( 'Enable Blog', 'workfolio' ),
+                'label' => esc_html__( 'Enable Blog', 'prismatic' ),
                 'type' => 'checkbox',
                 'section' => 'theme_home_blog',
                 'settings' => 'theme_home_blog_display'
             ],
             'theme_home_blog_title' => [
-                'label' => esc_html__('Title', 'workfolio'),
+                'label' => esc_html__('Title', 'prismatic'),
                 'section' => 'theme_home_blog',
                 'priority' => 10,
                 'settings' => 'theme_home_portfolio_title',
             ],
             'theme_home_blog_description' => [
-                'label' => esc_html__('Description', 'workfolio'),
+                'label' => esc_html__('Description', 'prismatic'),
                 'section' => 'theme_home_blog',
                 'type' => 'textarea',
                 'priority' => 10,
