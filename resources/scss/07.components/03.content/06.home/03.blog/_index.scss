@@ -1,35 +1,82 @@
-.site-blog {
-    background: #e3e3e3;
-    padding: 1.125rem;
+@media screen and ( max-width: 428px ) {
+    .site-blog {
+        background: #e3e3e3;
+        padding: 1.125rem;
+    
+        .blog-header {
+            text-align: center;
+            
+            .blog-header-title {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    
+        .blog-content {
+            margin: 1.125rem auto;
+            max-width: 1200px;
+    
+            .blog-items {
+                grid-gap: 1.125rem;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+    
+                .blog-item {
+                    line-height: 1.8rem;
+                    margin-top: 3rem;
 
-    .blog-header {
-        text-align: center;
-        
-        .blog-header-title {
-            margin: 0;
-            padding: 0;
+                    &:first-child {
+                        margin-top: 1.5rem;
+                    }
+    
+                    .entry-header {
+                        .entry-title {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
         }
     }
+}
 
-    .blog-content {
-        margin: 1.125rem auto;
-        max-width: 1200px;
-
-        .blog-items {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 1.125rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            .blog-item {
-                line-height: 1.8rem;
-
-                .entry-header {
-                    .entry-title {
-                        margin: 0;
-                        padding: 0;
+@media screen and ( min-width: 1200px ) {
+    .site-blog {
+        background: #e3e3e3;
+        padding: 1.125rem;
+    
+        .blog-header {
+            text-align: center;
+            
+            .blog-header-title {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    
+        .blog-content {
+            margin: 1.125rem auto;
+            max-width: 1200px;
+    
+            .blog-items {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 1.125rem;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+    
+                .blog-item {
+                    line-height: 1.8rem;
+                    margin-top: 1.125rem;
+    
+                    .entry-header {
+                        .entry-title {
+                            margin: 0;
+                            padding: 0;
+                        }
                     }
                 }
             }
