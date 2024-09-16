@@ -31,6 +31,7 @@ class Customize extends Customizable {
 	public function registerSections( WP_Customize_Manager $manager ) {
         $manager->get_section( 'colors' )->panel = 'theme_header';
         $manager->get_section( 'header_image' )->panel = 'theme_header';
+
     }
 
 	/**
@@ -43,6 +44,16 @@ class Customize extends Customizable {
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
         $manager->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		$manager->get_setting( 'header_textcolor' )->priority = 5;
+
+		$manager->add_setting( 'theme_header_background_color', [
+			'default' => '#0b5e79',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport' => 'postMessage',
+			'priority' => 10,
+		] );
+
+
     }
 
 	/**
@@ -54,6 +65,12 @@ class Customize extends Customizable {
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
+
+		$manager->add_control( new WP_Customize_Color_Control( $manager, 'theme_header_background_color', [
+			'label' => esc_html__( 'Background Color', 'prismatic' ),
+			'section' => 'colors',
+			'settings' => 'theme_header_background_color'
+		] ) );
     }
 
 	/**
