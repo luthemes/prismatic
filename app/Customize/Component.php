@@ -200,7 +200,8 @@ class Component implements Bootable {
 
 	public function enqueueCustomizerStyles() {
 		$text_color = get_header_textcolor();
-		$footer_background = get_theme_mod('theme_footer_background_color', '#ffffff'); // Default value if not set
+		$footer_background = get_theme_mod('theme_footer_background_color', '#0b5e79'); // Default value if not set
+		$header_background = get_theme_mod( 'theme_header_background_color', '#0b5e79' );
 	
 		// Header text styles - only add if not default text color
 		$header_styles = '';
@@ -213,6 +214,12 @@ class Component implements Bootable {
 				}
 			";
 		}
+
+		$header_background = "
+			.site-header {
+				background: {$header_background};
+			}
+		";
 	
 		// Footer background - always add
 		$footer_styles = "
@@ -222,7 +229,7 @@ class Component implements Bootable {
 		";
 	
 		// Combine both styles
-		$custom_css = $header_styles . $footer_styles;
+		$custom_css = $header_styles . $header_background . $footer_styles;
 	
 		// Add inline styles
 		wp_add_inline_style('prismatic-screen', $custom_css);
