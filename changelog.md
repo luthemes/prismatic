@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.2 - 09.16.2024
+
+### Enhancement
+- Add Header Background
+- Minor changes to mobile side
+
+### Bug
+- Fixed Footer Background
+
 ## 0.1.1 - 09.14.2024
 
 ### Added
