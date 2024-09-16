@@ -5,7 +5,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Prismatic is a next-generation theme designed to work with ClassicPress, offering an ideal experience for showcasing your site's content.
+Prismatic is a clean, minimal, and modern theme for ClassicPress or WordPress, perfect for blogs or personal sites. It features a two-column layout with a customizable sidebar and a focus on readability and content presentation.
 
 == Installation ==
 1. In your admin panel when logged in, go to Appearance -> Themes and Click on Add New.
