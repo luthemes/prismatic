@@ -200,26 +200,34 @@ class Component implements Bootable {
 
 	public function enqueueCustomizerStyles() {
 		$text_color = get_header_textcolor();
-		$footer_background = get_theme_mod( 'theme_footer_background_color' );
-
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $text_color ) {
-			return;
+		$footer_background = get_theme_mod('theme_footer_background_color', '#ffffff'); // Default value if not set
+	
+		// Header text styles - only add if not default text color
+		$header_styles = '';
+		if (get_theme_support('custom-header', 'default-text-color') !== $text_color) {
+			$value = display_header_text() ? sprintf('color: #%s;', esc_html($text_color)) : 'display: none;';
+			$header_styles = "
+				.site-header .branding-navigation .site-branding .site-title a,
+				.site-header .branding-navigation .site-branding .site-description {
+					$value
+				}
+			";
 		}
-
-		$value = display_header_text() ? sprintf( 'color: #%s', esc_html( $text_color ) ) : 'display: none;';
-		
-		$custom_css = "
-			.site-header .branding-navigation .site-branding .site-title a,
-			.site-header .branding-navigation .site-branding .site-description {
-				$value
-			}
-
+	
+		// Footer background - always add
+		$footer_styles = "
 			.site-footer {
 				background: {$footer_background};
 			}
 		";
-		wp_add_inline_style( 'prismatic-screen', $custom_css );
+	
+		// Combine both styles
+		$custom_css = $header_styles . $footer_styles;
+	
+		// Add inline styles
+		wp_add_inline_style('prismatic-screen', $custom_css);
 	}
+	
 	
 
 	public function enqueueBackgroundStyles() {
