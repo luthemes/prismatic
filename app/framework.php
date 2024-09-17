@@ -51,6 +51,7 @@ array_map( function( $component ) use ( $theme ) {
 }, [
     'Clean',
     'Customize',
+    'FeatureImage',
     'Settings'
 ] );
 
