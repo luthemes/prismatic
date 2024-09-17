@@ -24,11 +24,8 @@ namespace Prismatic;
  */
 function sep( $sep = '' ) {
 
-	return apply_filters(
-		'prismatic/sep',
-		sprintf(
-			' <span class="sep">%s</span> ',
-			$sep ?: esc_html_x( '&middot;', 'meta separator', 'prismatic' )
-		)
-	);
+	return apply_filters( 'prismatic/sep', sprintf(
+		' <span class="sep">%s</span> ',
+		$sep ?: esc_html_x( '&middot;', 'meta separator', 'prismatic' )
+	) );
 }
