@@ -13,6 +13,13 @@
 
  return [
 
+	// Landscape sizes.
+	'post-thumbnail' => [
+		'label'            => __( 'Landscape: Thumbnail', 'prismatic' ),
+		'width'            => 178,
+		'height'           => 100,
+		'is_featured_size' => false
+	],
 	'prismatic-landscape-medium' => [
 		'label'  => __( 'Landscape: Medium', 'amicable' ),
 		'width'  => 640,
