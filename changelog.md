@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.3 - 09.18.2024
+
+### Added
+- Added Reading Time support
+
 ## 0.1.2 - 09.16.2024
 
 ### Enhancement
