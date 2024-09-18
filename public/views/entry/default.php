@@ -11,6 +11,7 @@
 			<?php Backdrop\Theme\Entry\display_date(); ?>
 			<?php Backdrop\Theme\Entry\display_author( [ 'before' => Prismatic\sep() ] ); ?>
 			<?php Backdrop\Theme\Entry\display_comments_link( [ 'before' => Prismatic\sep() ] ); ?>
+			<?php Backdrop\Theme\Entry\display_reading_time( [ 'before' => Prismatic\sep() ] ); ?>
 		</div>
 	</header>
 	<div class="entry-content">
