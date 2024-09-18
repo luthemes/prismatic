@@ -21,17 +21,17 @@
 		'is_featured_size' => false
 	],
 	'prismatic-landscape-medium' => [
-		'label'  => __( 'Landscape: Medium', 'amicable' ),
+		'label'  => __( 'Landscape: Medium', 'prismatic' ),
 		'width'  => 640,
 		'height' => 360
 	],
 	'prismatic-landscape-large' => [
-		'label'  => __( 'Landscape: Large', 'amicable' ),
+		'label'  => __( 'Landscape: Large', 'prismatic' ),
 		'width'  => 896,
 		'height' => 504
 	],
 	'prismatic-landscape-extra-large' => [
-		'label'  => __( 'Landscape: Extra Large', 'amicable' ),
+		'label'  => __( 'Landscape: Extra Large', 'prismatic' ),
 		'width'  => 1366,
 		'height' => 768
 	],
