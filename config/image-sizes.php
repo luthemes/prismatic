@@ -30,9 +30,9 @@
 		'width'  => 896,
 		'height' => 504
 	],
-	'prismatic-landscape-extra-large' => [
-		'label'  => __( 'Landscape: Extra Large', 'prismatic' ),
-		'width'  => 1366,
-		'height' => 768
+	'prismatic-landscape-portfolio' => [
+		'label'  => __( 'Landscape: Portfolio', 'prismatic' ),
+		'width'  => 1170,
+		'height' => 614
 	],
 ];
