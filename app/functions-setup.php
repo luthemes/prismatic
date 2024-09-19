@@ -15,6 +15,7 @@ namespace Prismatic;
 
 use function Backdrop\Fonts\enqueue;
 use function Backdrop\Theme\is_classicpress;
+use function Backdrop\Theme\is_plugin_or_class_active;
 
 /**
  * Set up theme support.
@@ -125,9 +126,11 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'backdrop/templates/register', function( $templates ) {
 
-	$templates->add( 'template-home.php', [
-		'label' => esc_html__( 'Home', 'prismatic' )
-	] );
+	if ( is_plugin_or_class_active( 'backdrop-custom-portfolio/backdrop-custom-portfolio.php' ) ) {
+		$templates->add( 'template-home.php', [
+			'label' => esc_html__( 'Home', 'prismatic' )
+		] );
+	}
 
 	$templates->add( 'template-showcase.php', [
 		'label' => esc_html__( 'Showcase', 'prismatic' )
