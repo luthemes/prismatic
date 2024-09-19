@@ -18,6 +18,8 @@ use Backdrop\Core\ServiceProvider;
 use Prismatic\Customize\Background;
 use Prismatic\Customize\Footer;
 use Prismatic\Customize\Layout;
+
+use function Backdrop\Theme\is_plugin_or_class_active;
 /**
  * Customize service provider.
  *
@@ -35,15 +37,19 @@ class Provider extends ServiceProvider {
 	 */
 	public function register(): void {
 
-		$this->app->singleton( Component::class, function() {
-			return new Component( [
-				Background\Customize::class,
-				Footer\Customize::class,
-				Header\Customize::class,
-				Home\Customize::class,
-				Layout\Customize::class,
-				
-			] );
+		$components = [
+			Background\Customize::class,
+			Footer\Customize::class,
+			Header\Customize::class,
+			Layout\Customize::class
+		];
+
+		if ( is_plugin_or_class_active( 'backdrop-custom-portfolio/backdrop-custom-portfolio.php' ) ) {
+			$components[] = Home\Customize::class;
+		}
+
+		$this->app->singleton( Component::class, function() use ( $components ) {
+			return new Component( $components );
 		} );
 	}
 
