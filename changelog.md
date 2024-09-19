@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.5 - 09.19.2024
+
+## Ehancement
+- Check if Backdrop Custom Portfolio exist then add Home Customizer
+- Check if Backdrop Custom Portfolio exist then add Home template
+
 ## 0.1.4 - 09.19.2024
 
 ### Ehancement
