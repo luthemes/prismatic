@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.4 - 09.19.2024
+
+### Ehancement
+- Make archive seem more readable
+- Use grid system for archive
+
 ## 0.1.3 - 09.18.2024
 
 ### Added
