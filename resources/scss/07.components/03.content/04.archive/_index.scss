@@ -1,0 +1,46 @@
+
+@media screen and ( min-width: 1025px ) {
+    .archive {
+
+        .archive-header {
+            text-align: center;
+
+            .archive-title {
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+
+        .content-area {
+            line-height: 1.8rem;
+    
+            .grid-col-3 {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 1.125rem;
+                margin-top: 2.25rem;
+
+                .post {
+                    background: #ffffff;
+                    border: 0.063rem dotted #5394a8;
+                    border-bottom: 0.063rem solid #5394a8;
+                    padding: 1.125rem;
+        
+                    .entry-header {
+                        text-align: center;
+        
+                        .entry-title {
+                            margin: 0;
+                            padding: 0;
+                        }
+        
+                        .entry-metadata {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
