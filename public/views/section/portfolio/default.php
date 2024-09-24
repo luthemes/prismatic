@@ -8,7 +8,7 @@
 				<?php
 				$posts_per_page = get_theme_mod( 'custom_portfolio_items', 9 );
 				$query          = new WP_Query( array(
-					'post_type'      => 'portfolio',
+					'post_type'      => 'backdrop-portfolio',
 					'posts_per_page' => $posts_per_page,
 				) );
 

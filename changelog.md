@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.6 - 09.24.2024
+### Ehancement
+- update post type from portfolio to backdrop-portfolio
+
 ## 0.1.5 - 09.19.2024
 
 ## Ehancement
