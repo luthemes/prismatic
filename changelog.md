@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.7 - 09.24.2024
+
+### Added
+- Added archive-backdrop-portfolio.php
+- Styled archive portfolio page
+
 ## 0.1.6 - 09.24.2024
 ### Ehancement
 - update post type from portfolio to backdrop-portfolio
