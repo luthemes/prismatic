@@ -1,0 +1,38 @@
+/* Base Styles for Social Menu */
+#social {
+    display: flex;
+    justify-content: center; /* Center-align the icons */
+    align-items: center;
+    padding: 0.5rem;
+
+    /* Menu Items */
+    .menu-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        /* Individual Menu Items */
+        .menu-item {
+            margin-right: 0.5rem; /* Space between icons */
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px; /* Smaller width */
+                height: 30px; /* Smaller height */
+                border-radius: 5px; /* Small rounded corners */
+                text-decoration: none;
+                transition: background 0.3s ease-in-out;
+
+                svg {
+                    width: 25px; /* Smaller SVG size */
+                    height: 25px;
+                    fill: #ffffff; /* White fill color for SVG */
+                    color: white;
+                }
+            }
+        }
+    }
+}

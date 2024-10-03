@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.8 - 10.03.2024
+
+#### Added
+- Added Social Navigation support
+
 ## 0.1.7 - 09.24.2024
 
 ### Added
