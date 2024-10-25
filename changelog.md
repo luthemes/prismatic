@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.9 - 10.25.2024
+### Bug
+- Fixed Pagination deprecation. 
+
 ## 0.1.8 - 10.03.2024
 
 #### Added
