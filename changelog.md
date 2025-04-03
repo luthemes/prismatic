@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0 - 04.03.2025
+### Misc
+* Update Dependencies
+
 ## 0.1.9 - 10.25.2024
 ### Bug
 - Fixed Pagination deprecation. 
