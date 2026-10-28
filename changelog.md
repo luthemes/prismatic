@@ -1,5 +1,25 @@
 # Change Log
 
+## 0.2.1 - 10.28.2026
+### Changed
+- Updated to the `develop` branch of `backdrop-dev/framework`, which replaces the separate `customize`, `languages`, `pagination`, `template-hierarchy`, `template-manager`, `theme` and `view` packages, and use the framework's Customize component.
+- The header colors have their own **Theme: Header → Colors** section, since the framework removes the core Colors section.
+- Theme assets are versioned with the theme version, since `backdrop-dev/mix` no longer reads Laravel Mix's manifest.
+- The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token and checks that the release tag matches the `style.css` version.
+- Declares `Domain Path: /public/lang` in `style.css`.
+
+### Removed
+- Composer dev dependencies (`wptrt/wpthemereview` is abandoned and blocked `composer install`) and `composer.lock`, which pinned the old split packages.
+
+### Fixed
+- The customizer controls script loads; it was enqueued from the CSS folder, which caused a JavaScript error in the customizer.
+- The Home panel's Blog title control changed the Portfolio title.
+- The menu toggles' screen reader text was empty.
+- Featured images no longer ask for Creativity's image sizes, and small screens load a 768px image.
+- Show an admin notice instead of a fatal error when the Backdrop framework isn't installed.
+- Removed calls to framework functions that no longer exist (`Backdrop\Theme\Entry\*`, `Backdrop\Theme\Site\*`, `Backdrop\Theme\Comment\*`, `Backdrop\Template\Hierarchy\hierarchy`, `Backdrop\Customize\Helpers\Sanitize`), and kept the post and menu item classes the styles use.
+- The settings page no longer requests a missing `admin.css`.
+
 ## 0.2.0 - 04.03.2025
 ### Misc
 * Update Dependencies
