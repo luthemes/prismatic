@@ -14,8 +14,8 @@
 namespace Prismatic;
 
 use function Backdrop\Fonts\enqueue;
-use function Backdrop\Theme\is_classicpress;
-use function Backdrop\Theme\is_plugin_or_class_active;
+use function Backdrop\is_classicpress;
+use function Backdrop\is_plugin_or_class_active;
 
 /**
  * Set up theme support.

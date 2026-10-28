@@ -15,7 +15,6 @@ namespace Prismatic\Settings\Admin;
 
 use Backdrop\Contracts\Bootable;
 use Prismatic\Settings\Admin\Views;
-use function Backdrop\Mix\asset;
 use Prismatic\Settings\Manager\Themes;
 
 /**
@@ -156,7 +155,6 @@ class OptionsPage implements Bootable {
 
 		// Print custom styles.
 		add_action( 'admin_head', array( $this, 'print_styles' ) );
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_styles' ] );
 
 		// Get the current view and boot it.
 		$view = $this->currentView();
@@ -183,10 +181,6 @@ class OptionsPage implements Bootable {
 			) ?>
 		</style>
 	<?php }
-
-	public function admin_styles() {
-		wp_enqueue_style( 'Prismatic-admin-styles', asset( 'css/admin.css' ), null, null );
-	}
 
 	/**
 	 * Outputs the settings page to the screen.

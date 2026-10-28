@@ -68,15 +68,15 @@ class Customize extends Customizable {
         $displays = [
             'theme_home_header_display' => [
                 'default' => false,
-                'sanitize_callback' => 'Backdrop\Customize\Helpers\Sanitize::checkbox',
+                'sanitize_callback' => 'Prismatic\Customize\Sanitize::checkbox',
             ],
             'theme_home_portfolio_display' => [
                 'default' => false,
-                'sanitize_callback' => 'Backdrop\Customize\Helpers\Sanitize::checkbox',
+                'sanitize_callback' => 'Prismatic\Customize\Sanitize::checkbox',
             ],
             'theme_home_blog_display' => [
                 'default' => false,
-                'sanitize_callback' => 'Backdrop\Customize\Helpers\Sanitize::checkbox',
+                'sanitize_callback' => 'Prismatic\Customize\Sanitize::checkbox',
             ],
             'theme_home_header_title' => [
                 'default' => esc_html__( 'Our Mission Goes Here', 'prismatic' ),

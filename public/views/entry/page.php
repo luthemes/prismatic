@@ -3,7 +3,7 @@
 		<?php the_post_thumbnail( 'creativity-large' ); ?>
 	</div>
 	<header class="entry-header">
-		<?php Backdrop\Theme\Entry\display_title(); ?>
+		<?php Backdrop\Post\display_title( [ 'class' => 'entry-title' ] ); ?>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>

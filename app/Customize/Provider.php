@@ -19,7 +19,7 @@ use Prismatic\Customize\Background;
 use Prismatic\Customize\Footer;
 use Prismatic\Customize\Layout;
 
-use function Backdrop\Theme\is_plugin_or_class_active;
+use function Backdrop\is_plugin_or_class_active;
 /**
  * Customize service provider.
  *

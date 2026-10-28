@@ -13,158 +13,42 @@
 
 namespace Prismatic\Customize;
 
-use Backdrop\Contracts\Bootable;
+use Backdrop\Customize\Component as BaseComponent;
 use Prismatic\Tools\Config;
-use Prismatic\Tools\Mod;
-use Backdrop\App;
-use function Backdrop\Mix\asset;
-use Prismatic\Tools\Collection;
 
-use WP_Customize_Manager;
-use WP_Customize_Color_Control;
-use WP_Customize_Control;
+use function Backdrop\Mix\asset;
 
 /**
  * Handles setting up everything we need for the customizer.
+ *
+ * The framework's `Backdrop\Customize\Component` registers the `Theme: Global`, `Theme: Header`,
+ * `Theme: Content` and `Theme: Footer` panels, moves the core sections into them, registers the
+ * `radio-image` control type and calls each customizable component. This class adds the theme's
+ * customizer scripts and styles and the inline styles for the customizer settings.
  *
  * @link   https://developer.wordpress.org/themes/customize-api
  * @since  1.0.0
  * @access public
  */
-class Component implements Bootable {
+class Component extends BaseComponent {
 
 	/**
-	 * Array of `Customizable` components bound to the container.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    array
-	 */
-	protected $components = [];
-
-	/**
-	 * Sets up initial object properties.
+	 * Adds our customizer-related actions to the appropriate hooks.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array  $components  Array `Customizable` component names.
 	 * @return void
 	 */
-	public function __construct( array $components = [] ) {
+	public function boot(): void {
 
-		$this->components = $components;
-	}
+		parent::boot();
 
-    /**
-     * Adds our customizer-related actions to the appropriate hooks.
-     *
-     * @since  1.0.0
-     * @return void
-     *
-     * @access public
-     */
-    public function boot(): void {
-
-		// Register panels, sections, settings, controls, and partials.
-		array_map( function( $callback ) {
-			add_action( 'customize_register', [ $this, $callback ] );
-		}, [
-			'registerPanels',
-			'registerSections',
-			'registerSettings',
-			'registerControls'
-		] );
-		
 		// Enqueue scripts and styles.
-		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue' ] );
 		add_action( 'customize_preview_init',             [ $this, 'previewEnqueue' ] );
 
-		add_action('wp_enqueue_scripts', [$this, 'enqueueCustomizerStyles']);
-		add_action('wp_enqueue_scripts', [$this, 'enqueueBackgroundStyles']);
-	}
-
-	/**
-	 * Callback for registering panels.
-	 *
-	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels
-	 * @since  1.0.0
-	 * @access public
-	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
-	 * @return void
-	 */
-	public function registerPanels( WP_Customize_Manager $manager ) {
-		$panels = [
-				'theme_global'  => esc_html__( 'Theme: Global',  'prismatic' ),
-				'theme_header'  => esc_html__( 'Theme: Header',  'prismatic' ),
-				'theme_content' => esc_html__( 'Theme: Content', 'prismatic' ),
-				'theme_footer'  => esc_html__( 'Theme: Footer',  'prismatic' )
-		];
-
-		foreach ( $panels as $panel => $label ) {
-				$manager->add_panel( $panel, [
-						'title'    => $label,
-						'priority' => 100
-				] );
-		}
-
-		foreach ( $this->components as $component ) {
-
-			App::resolve( $component )->registerPanels( $manager );
-		}
-	}
-
-	/**
-	 * Callback for registering sections.
-	 *
-	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
-	 * @since  1.0.0
-	 * @access public
-	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
-	 * @return void
-	 */
-    public function registerSections( WP_Customize_Manager $manager ) {
-		$manager->get_section( 'custom_css' )->panel = 'theme_global';
-		$manager->get_section( 'title_tagline' )->panel = 'theme_header';
-		$manager->get_section( 'static_front_page' )->panel = 'theme_content';
-
-
-		foreach ( $this->components as $component ) {
-
-			App::resolve( $component )->registerSections( $manager );
-		}
-    }
-
-	/**
-	 * Callback for registering controls.
-	 *
-	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls
-	 * @since  1.0.0
-	 * @access public
-	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
-	 * @return void
-	 */
-    public function registerSettings( WP_Customize_Manager $manager ) {
-
-		foreach ( $this->components as $component ) {
-
-			App::resolve( $component )->registerSettings( $manager );
-		}
-	}
-
-    /**
-     * Add our controls for customizer.
-     *
-     * @since  1.0.0
-     * @access public
-     * @param  WP_Customize_Manager $manager
-     * @return void
-     */
-    public function registerControls( WP_Customize_Manager $manager ) {
-
-		foreach ( $this->components as $component ) {
-
-			App::resolve( $component )->registerControls( $manager );
-		}
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueueCustomizerStyles' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueueBackgroundStyles' ] );
 	}
 
 	/**
@@ -177,8 +61,10 @@ class Component implements Bootable {
 	 */
 	public function controlsEnqueue() {
 
-		wp_enqueue_style( 'prismatic-customize-controls', asset( 'assets/css/customize-controls.css' ), [], null );
-		wp_enqueue_script( 'prismatic-customize-controls', asset( 'assets/css/customize-controls.js' ), null, true );
+		$version = wp_get_theme( get_template() )->get( 'Version' );
+
+		wp_enqueue_style( 'prismatic-customize-controls', asset( 'assets/css/customize-controls.css' ), [], $version );
+		wp_enqueue_script( 'prismatic-customize-controls', asset( 'assets/js/customize-controls.js' ), [ 'customize-controls' ], $version, true );
 	}
 
 	/**
@@ -190,13 +76,14 @@ class Component implements Bootable {
 	 */
 	public function previewEnqueue() {
 
+		$version = wp_get_theme( get_template() )->get( 'Version' );
+
 		// Enqueue preview style.
-		wp_enqueue_style( 'prismatic-customize-preview', asset( 'assets/css/customize-previews.css' ), [], null );
+		wp_enqueue_style( 'prismatic-customize-preview', asset( 'assets/css/customize-previews.css' ), [], $version );
 
 		// Enqueue preview script.
-		wp_enqueue_script( 'prismatic-customize-preview', asset( 'assets/js/customize-previews.js' ), [ 'customize-preview' ], null, true );
+		wp_enqueue_script( 'prismatic-customize-preview', asset( 'assets/js/customize-previews.js' ), [ 'customize-preview' ], $version, true );
 	}
-
 
 	public function enqueueCustomizerStyles() {
 		$text_color = get_header_textcolor();
