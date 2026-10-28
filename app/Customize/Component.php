@@ -16,7 +16,7 @@ namespace Prismatic\Customize;
 use Backdrop\Customize\Component as BaseComponent;
 use Prismatic\Tools\Config;
 
-use function Backdrop\Mix\asset;
+use function Prismatic\Vite\asset;
 
 /**
  * Handles setting up everything we need for the customizer.
@@ -61,10 +61,8 @@ class Component extends BaseComponent {
 	 */
 	public function controlsEnqueue() {
 
-		$version = wp_get_theme( get_template() )->get( 'Version' );
-
-		wp_enqueue_style( 'prismatic-customize-controls', asset( 'assets/css/customize-controls.css' ), [], $version );
-		wp_enqueue_script( 'prismatic-customize-controls', asset( 'assets/js/customize-controls.js' ), [ 'customize-controls' ], $version, true );
+		wp_enqueue_style( 'prismatic-customize-controls', asset( 'resources/scss/customize-controls.scss' ), [], null );
+		wp_enqueue_script( 'prismatic-customize-controls', asset( 'resources/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
 	}
 
 	/**
@@ -76,13 +74,11 @@ class Component extends BaseComponent {
 	 */
 	public function previewEnqueue() {
 
-		$version = wp_get_theme( get_template() )->get( 'Version' );
-
 		// Enqueue preview style.
-		wp_enqueue_style( 'prismatic-customize-preview', asset( 'assets/css/customize-previews.css' ), [], $version );
+		wp_enqueue_style( 'prismatic-customize-preview', asset( 'resources/scss/customize-previews.scss' ), [], null );
 
 		// Enqueue preview script.
-		wp_enqueue_script( 'prismatic-customize-preview', asset( 'assets/js/customize-previews.js' ), [ 'customize-preview' ], $version, true );
+		wp_enqueue_script( 'prismatic-customize-preview', asset( 'resources/js/customize-previews.js' ), [ 'customize-preview' ], null, true );
 	}
 
 	public function enqueueCustomizerStyles() {

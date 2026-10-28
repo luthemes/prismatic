@@ -2,4 +2,5 @@ node_modules
 public/assets
 vendor
 
-public/mix-manifest.json
+# Theme export (npm run export)
+/prismatic
