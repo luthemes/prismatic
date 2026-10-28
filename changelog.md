@@ -4,12 +4,13 @@
 ### Changed
 - Updated to the `develop` branch of `backdrop-dev/framework`, which replaces the separate `customize`, `languages`, `pagination`, `template-hierarchy`, `template-manager`, `theme` and `view` packages, and use the framework's Customize component.
 - The header colors have their own **Theme: Header → Colors** section, since the framework removes the core Colors section.
-- Theme assets are versioned with the theme version, since `backdrop-dev/mix` no longer reads Laravel Mix's manifest.
-- The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token and checks that the release tag matches the `style.css` version.
+- Replaced Laravel Mix with Vite, like Amicable. Laravel Mix and its webpack toolchain pull in packages with known vulnerabilities; the build now needs only `vite` and `sass`. Built assets have content-hashed names, which the theme's own `Prismatic\Vite\asset()` reads from Vite's manifest, so `backdrop-dev/mix` is no longer required.
+- The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token, checks that the release tag matches the `style.css` version, and stops if `npm audit` finds a high or critical vulnerability.
 - Declares `Domain Path: /public/lang` in `style.css`.
 
 ### Removed
 - Composer dev dependencies (`wptrt/wpthemereview` is abandoned and blocked `composer install`) and `composer.lock`, which pinned the old split packages.
+- `webpack.mix.js`, `webpack.mix.export.js` and the Laravel Mix `package-lock.json`.
 
 ### Fixed
 - The customizer controls script loads; it was enqueued from the CSS folder, which caused a JavaScript error in the customizer.
