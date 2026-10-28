@@ -174,7 +174,7 @@ class Customize extends Customizable {
                 'label' => esc_html__('Title', 'prismatic'),
                 'section' => 'theme_home_blog',
                 'priority' => 10,
-                'settings' => 'theme_home_portfolio_title',
+                'settings' => 'theme_home_blog_title',
             ],
             'theme_home_blog_description' => [
                 'label' => esc_html__('Description', 'prismatic'),

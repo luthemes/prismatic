@@ -38,10 +38,14 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'prismatic-app', asset( 'assets/js/app.js' ), [ 'jquery' ], $version, true );
 
 	// Enqueue Navigation.
-	wp_enqueue_script( 'prismatic-navigation', asset( 'assets/js/navigation.js' ), null, $version, true );
+	wp_enqueue_script( 'prismatic-navigation', asset( 'assets/js/navigation.js' ), [ 'jquery' ], $version, true );
+
+	// Screen reader text for the menu toggles. `navigation.js` sets these as plain text.
 	wp_localize_script( 'prismatic-navigation', 'prismaticScreenReaderText', [
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'prismatic' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'prismatic' ) . '</span>',
+		'expandMain'    => __( 'Open the main menu', 'prismatic' ),
+		'collapseMain'  => __( 'Close the main menu', 'prismatic' ),
+		'expandChild'   => __( 'expand child menu', 'prismatic' ),
+		'collapseChild' => __( 'collapse child menu', 'prismatic' ),
 	] );
 
 	// Loads ClassicPress' comment-reply script where appropriate.
