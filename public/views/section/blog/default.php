@@ -16,7 +16,7 @@
 					while ( $query->have_posts() ) : $query->the_post(); ?>
                         <li class="blog-item">
                             <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                <?php the_post_thumbnail( 'creativity-large' ); ?>
+                                <?php the_post_thumbnail( 'full' ); ?>
                             </a>
                             <header class="entry-header">
                                 <?php Backdrop\Post\display_title( [ 'class' => 'entry-title' ] ); ?>

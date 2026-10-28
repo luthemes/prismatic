@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-post-thumbnail">
-		<?php the_post_thumbnail( 'creativity-large' ); ?>
+		<?php the_post_thumbnail( 'full' ); ?>
 	</div>
 	<header class="entry-header">
 		<?php Backdrop\Post\display_title( [ 'class' => 'entry-title' ] ); ?>
