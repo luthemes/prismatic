@@ -17,5 +17,15 @@
  * Load the bootstrap files. Note that autoload should happen first so that any classes or
  * functions are available that we might need.
  */
+if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
+	require_once get_parent_theme_file_path( 'vendor/autoload.php' );
+}
+
+// If the Backdrop framework isn't installed, show a notice instead of a fatal error.
+if ( ! class_exists( 'Backdrop\\Core\\Application' ) ) {
+	require_once get_parent_theme_file_path( 'app/framework-missing.php' );
+	return;
+}
+
 require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
 require_once get_parent_theme_file_path( 'app/framework.php' );
