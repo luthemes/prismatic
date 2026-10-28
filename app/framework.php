@@ -34,7 +34,6 @@ $theme = function_exists( 'Backdrop\booted' ) && Backdrop\booted()
  * booting the application. These service providers form the foundation for the theme.
  */
 $theme->provider( Backdrop\Fonts\Provider::class );
-$theme->provider( Backdrop\Mix\Provider::class );
 
 /** ------------------------------------------------------------------------------------------
  * Register additional service providers for the theme.
@@ -48,6 +47,7 @@ $theme->provider( Backdrop\Mix\Provider::class );
  */
 
 $theme->provider( Prismatic\Provider::class );
+$theme->provider( Prismatic\Vite\Provider::class );
 
 array_map( function( $component ) use ( $theme ) {
 	$theme->provider( "Prismatic\\{$component}\\Provider" );

@@ -18,7 +18,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
               with:
-                  node-version: 22 # Laravel Mix 6 (webpack 5) builds the assets.
+                  node-version: 24
 
             # The release tag (without a leading "v") must match the `Version:` header in
             # style.css, and the zip is named "{repo}.{version}.zip", e.g. prismatic.0.2.1.zip.
@@ -39,11 +39,18 @@ jobs:
             - name: Install Composer dependencies
               run: composer install --no-dev --no-interaction --prefer-dist
 
-            # Install exactly what package-lock.json pins.
+            # package-lock.json isn't committed, so use `npm install` rather than `npm ci`. The
+            # `overrides` in package.json set the lowest patched versions of the build tools'
+            # own dependencies.
             - name: Install Node dependencies
-              run: npm ci
+              run: npm install --no-fund
 
-            # Builds the assets with Laravel Mix, then exports the theme into the `prismatic` folder.
+            # Don't publish a release built with build tools that have a known high or critical
+            # vulnerability.
+            - name: Audit Node dependencies
+              run: npm audit --audit-level=high
+
+            # Builds the assets with Vite, then exports the theme into the `prismatic` folder.
             - name: Build
               run: npm run build
 

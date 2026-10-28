@@ -11,7 +11,7 @@
 
 namespace Prismatic;
 
-use function Backdrop\Mix\asset;
+use function Prismatic\Vite\asset;
 
 /**
  * Enqueue Scripts and Styles
@@ -26,19 +26,17 @@ use function Backdrop\Mix\asset;
 
 add_action( 'wp_enqueue_scripts', function() {
 
-	// `Backdrop\Mix\asset()` reads Vite's manifest.json, not Laravel Mix's mix-manifest.json, so
-	// the assets aren't versioned by their contents. Version them with the theme instead so
-	// browsers pick up new files after an update.
-	$version = wp_get_theme( get_template() )->get( 'Version' );
+	// Assets are enqueued by their source path. `Prismatic\Vite\asset()` looks them up in Vite's
+	// manifest.json, which maps them to the built files, whose names change with their contents.
 
 	// Rather than enqueue the main style.css stylesheet, we are going to enqueue screen.css.
-	wp_enqueue_style( 'prismatic-screen', asset( 'assets/css/screen.css' ), null, $version );
+	wp_enqueue_style( 'prismatic-screen', asset( 'resources/scss/screen.scss' ), null, null );
 
 	// Enqueue theme scripts
-	wp_enqueue_script( 'prismatic-app', asset( 'assets/js/app.js' ), [ 'jquery' ], $version, true );
+	wp_enqueue_script( 'prismatic-app', asset( 'resources/js/app.js' ), [ 'jquery' ], null, true );
 
 	// Enqueue Navigation.
-	wp_enqueue_script( 'prismatic-navigation', asset( 'assets/js/navigation.js' ), [ 'jquery' ], $version, true );
+	wp_enqueue_script( 'prismatic-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );
 
 	// Screen reader text for the menu toggles. `navigation.js` sets these as plain text.
 	wp_localize_script( 'prismatic-navigation', 'prismaticScreenReaderText', [
