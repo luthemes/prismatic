@@ -1,7 +1,7 @@
 <li id="comment-<?php comment_ID(); ?>" class="comments">
 
 	<header class="comment-meta">
-		<?php Backdrop\Theme\Comment\display_parent_link( [
+		<?php Backdrop\Comment\display_parent_link( [
 			// Translators: %s is the parent comment link.
 			'text'   => __( 'In reply to %s', 'prismatic' ),
 			'depth'  => 3,
@@ -13,23 +13,23 @@
 			'class' => 'comment-avatar'
 		] ) ?>
 
-		<?php Backdrop\Theme\Comment\display_author_link( [
+		<?php Backdrop\Comment\display_author_link( [
 			'class' => 'comment-author-link',
 			'after' => '<br />',
 		] ) ?>
 
 		<?php
-		Backdrop\Theme\Comment\display_permalink( [
-			'text' => Backdrop\Theme\Comment\render_date()
+		Backdrop\Comment\display_permalink( [
+			'text' => Backdrop\Comment\render_date()
 		] );
 		?>
-		<?php Backdrop\Theme\Comment\display_edit_link( [ 'before' => Prismatic\sep() ] ) ?>
-		<?php Backdrop\Theme\Comment\display_reply_link( [ 'before' => Prismatic\sep() ] ) ?>
+		<?php Backdrop\Comment\display_edit_link( [ 'before' => Prismatic\sep() ] ) ?>
+		<?php Backdrop\Comment\display_reply_link( [ 'before' => Prismatic\sep() ] ) ?>
 	</header>
 
 	<div class="comment-content">
 
-		<?php if ( ! Backdrop\Theme\Comment\is_approved() ) : ?>
+		<?php if ( ! Backdrop\Comment\is_approved() ) : ?>
 
 			<p class="comment-moderation">
 				<?php esc_html_e( 'Your comment is awaiting moderation.', 'prismatic' ) ?>

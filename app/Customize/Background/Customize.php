@@ -9,7 +9,7 @@
  */
 namespace Prismatic\Customize\Background;
 
-use Backdrop\Customize\Controls\BackgroundSvg;
+use Prismatic\Customize\Controls\BackgroundSvg;
 
 use Prismatic\Customize\Customizable;
 use Prismatic\Tools\Collection;

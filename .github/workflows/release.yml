@@ -4,42 +4,56 @@ on:
     release:
         types: [published]
 
+permissions:
+    contents: write
+
 jobs:
     release:
         runs-on: ubuntu-latest
 
         steps:
-            - name: step one
-              uses: webfactory/ssh-agent@v0.5.4
+            - name: Checkout
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+            - name: Setup Node.js
+              uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
               with:
-                  ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+                  node-version: 22 # Laravel Mix 6 (webpack 5) builds the assets.
 
-            - name: step two
-              uses: actions/checkout@v2
-              with:
-                  ssh-key: ${{ secrets.PRIVATE_KEY }}
+            # The release tag (without a leading "v") must match the `Version:` header in
+            # style.css, and the zip is named "{repo}.{version}.zip", e.g. prismatic.0.2.1.zip.
+            - name: Resolve version
+              id: version
+              run: |
+                  TAG="${{ github.event.release.tag_name }}"
+                  VERSION="${TAG#v}"
+                  THEME_VERSION=$(sed -n 's/^[ *]*Version:[[:space:]]*\([^[:space:]]*\).*/\1/p' style.css | head -n 1)
 
-            - name: step three
-              run: composer install --no-dev
+                  if [ "$VERSION" != "$THEME_VERSION" ]; then
+                      echo "::error::Release tag ($TAG) does not match the style.css version ($THEME_VERSION)."
+                      exit 1
+                  fi
 
-            - name: step four
-              run: npm install
+                  echo "zip=${{ github.event.repository.name }}.$VERSION.zip" >> "$GITHUB_OUTPUT"
 
-            - name: step five
+            - name: Install Composer dependencies
+              run: composer install --no-dev --no-interaction --prefer-dist
+
+            # Install exactly what package-lock.json pins.
+            - name: Install Node dependencies
+              run: npm ci
+
+            # Builds the assets with Laravel Mix, then exports the theme into the `prismatic` folder.
+            - name: Build
               run: npm run build
 
-            - name: step six
-              run: zip -r ${{ github.event.repository.name }}.${{ github.ref_name }}.zip ${{ github.event.repository.name }}
+            - name: Create ZIP
+              run: zip -r "${{ steps.version.outputs.zip }}" "${{ github.event.repository.name }}"
 
-            - name: step seven
-              uses: actions/upload-artifact@v4
-              with:
-                  name: ${{ github.event.repository.name }}.${{ github.ref_name }}
-                  path: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip
-
-            - name: step eight
-              uses: JasonEtco/upload-to-release@master
-              with:
-                  args: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip application/zip
+            - name: Upload ZIP to GitHub Release
               env:
-                  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  gh release upload "${{ github.event.release.tag_name }}" \
+                    "${{ steps.version.outputs.zip }}" \
+                    --clobber

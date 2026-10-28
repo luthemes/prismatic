@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 			wp_list_comments( [
 				'avatar_size' => 60,
 				'callback'    => function( $comment, $args, $depth ) {
-					Backdrop\View\display( 'comment', Backdrop\Theme\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+					Backdrop\View\display( 'comment', Backdrop\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
 				}
 			] );
 			?>

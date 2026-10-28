@@ -16,11 +16,11 @@
 					while ( $query->have_posts() ) : $query->the_post(); ?>
                         <li class="blog-item">
                             <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                <?php the_post_thumbnail( 'creativity-large' ); ?>
+                                <?php the_post_thumbnail( 'full' ); ?>
                             </a>
                             <header class="entry-header">
-                                <?php Backdrop\Theme\Entry\display_title(); ?>
-                                <span class="entry-metadata"><?php Backdrop\Theme\Entry\display_date(); ?></span>
+                                <?php Backdrop\Post\display_title( [ 'class' => 'entry-title' ] ); ?>
+                                <span class="entry-metadata"><?php Backdrop\Post\display_date( [ 'class' => 'entry-published' ] ); ?></span>
                             </header>
                             <div class="entry-excerpt">
                                 <?php the_excerpt(); ?>

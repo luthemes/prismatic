@@ -29,8 +29,13 @@ class Customize extends Customizable {
 	 * @return void
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
-        $manager->get_section( 'colors' )->panel = 'theme_header';
-        $manager->get_section( 'header_image' )->panel = 'theme_header';
+		// The framework removes the core `Colors` section and moves `Header Image` into the
+		// `Theme: Header` panel, so the header colors get a section of their own.
+		$manager->add_section( 'theme_header_colors', [
+			'title'    => esc_html__( 'Colors', 'prismatic' ),
+			'panel'    => 'theme_header',
+			'priority' => 30,
+		] );
 
     }
 
@@ -68,9 +73,16 @@ class Customize extends Customizable {
 
 		$manager->add_control( new WP_Customize_Color_Control( $manager, 'theme_header_background_color', [
 			'label' => esc_html__( 'Background Color', 'prismatic' ),
-			'section' => 'colors',
+			'section' => 'theme_header_colors',
 			'settings' => 'theme_header_background_color'
 		] ) );
+
+		$header_textcolor = $manager->get_control( 'header_textcolor' );
+
+		if ( $header_textcolor ) {
+			$header_textcolor->section  = 'theme_header_colors';
+			$header_textcolor->priority = 5;
+		}
     }
 
 	/**

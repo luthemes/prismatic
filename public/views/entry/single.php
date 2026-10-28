@@ -1,14 +1,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-post-thumbnail">
-		<?php the_post_thumbnail( 'creativity-large' ); ?>
+		<?php the_post_thumbnail( 'full' ); ?>
 	</div>
 	<header class="entry-header">
-		<?php Backdrop\Theme\Entry\display_title(); ?>
+		<?php Backdrop\Post\display_title( [ 'class' => 'entry-title' ] ); ?>
 		<div class="entry-metadata">
-			<?php Backdrop\Theme\Entry\display_date(); ?>
-			<?php Backdrop\Theme\Entry\display_author( [ 'before' => Prismatic\sep() ] ); ?>
-			<?php Backdrop\Theme\Entry\display_comments_link( [ 'before' => Prismatic\sep() ] ); ?>
-			<?php Backdrop\Theme\Entry\display_reading_time( [  'before' => Prismatic\sep() ] ); ?>
+			<?php Backdrop\Post\display_date( [ 'class' => 'entry-published' ] ); ?>
+			<?php Backdrop\Post\display_author( [ 'class' => 'entry-author', 'before' => Prismatic\sep() ] ); ?>
+			<?php Backdrop\Post\display_comments_link( [ 'class' => 'entry-comments', 'before' => Prismatic\sep() ] ); ?>
+			<?php Prismatic\display_reading_time( [  'before' => Prismatic\sep() ] ); ?>
 		</div>
 	</header>
 	<div class="entry-content">

@@ -24,19 +24,28 @@ use function Backdrop\Mix\asset;
  * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
 
- add_action( 'wp_enqueue_scripts', function() {
+add_action( 'wp_enqueue_scripts', function() {
+
+	// `Backdrop\Mix\asset()` reads Vite's manifest.json, not Laravel Mix's mix-manifest.json, so
+	// the assets aren't versioned by their contents. Version them with the theme instead so
+	// browsers pick up new files after an update.
+	$version = wp_get_theme( get_template() )->get( 'Version' );
 
 	// Rather than enqueue the main style.css stylesheet, we are going to enqueue screen.css.
-	wp_enqueue_style( 'prismatic-screen', asset( 'assets/css/screen.css' ), null, null );
+	wp_enqueue_style( 'prismatic-screen', asset( 'assets/css/screen.css' ), null, $version );
 
 	// Enqueue theme scripts
-	wp_enqueue_script( 'prismatic-app', asset( 'assets/js/app.js' ), [ 'jquery' ], null, true );
+	wp_enqueue_script( 'prismatic-app', asset( 'assets/js/app.js' ), [ 'jquery' ], $version, true );
 
 	// Enqueue Navigation.
-	wp_enqueue_script( 'prismatic-navigation', asset( 'assets/js/navigation.js' ), null, null, true );
+	wp_enqueue_script( 'prismatic-navigation', asset( 'assets/js/navigation.js' ), [ 'jquery' ], $version, true );
+
+	// Screen reader text for the menu toggles. `navigation.js` sets these as plain text.
 	wp_localize_script( 'prismatic-navigation', 'prismaticScreenReaderText', [
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'prismatic' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'prismatic' ) . '</span>',
+		'expandMain'    => __( 'Open the main menu', 'prismatic' ),
+		'collapseMain'  => __( 'Close the main menu', 'prismatic' ),
+		'expandChild'   => __( 'expand child menu', 'prismatic' ),
+		'collapseChild' => __( 'collapse child menu', 'prismatic' ),
 	] );
 
 	// Loads ClassicPress' comment-reply script where appropriate.
