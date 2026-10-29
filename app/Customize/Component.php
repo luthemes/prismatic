@@ -78,7 +78,13 @@ class Component extends BaseComponent {
 		wp_enqueue_style( 'prismatic-customize-preview', asset( 'resources/scss/customize-previews.scss' ), [], null );
 
 		// Enqueue preview script.
-		wp_enqueue_script( 'prismatic-customize-preview', asset( 'resources/js/customize-previews.js' ), [ 'customize-preview' ], null, true );
+		wp_enqueue_script( 'prismatic-customize-preview', asset( 'resources/js/customize-previews.js' ), [ 'jquery', 'customize-preview' ], null, true );
+
+		// The background patterns, for previewing the background settings.
+		wp_localize_script( 'prismatic-customize-preview', 'prismaticCustomizePreview', [
+			'backgroundSelector' => self::BACKGROUND_SELECTOR,
+			'backgroundPatterns' => static::backgroundPatterns(),
+		] );
 	}
 
 	public function enqueueCustomizerStyles() {
@@ -120,31 +126,83 @@ class Component extends BaseComponent {
 	
 	
 
+	/**
+	 * Selector for the theme's background CSS. It's more specific than core's
+	 * `body.custom-background`, so the chosen Background Type wins over the CSS core
+	 * prints for a saved background image, which comes later in the page.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    string
+	 */
+	const BACKGROUND_SELECTOR = 'html body.custom-background';
+
+	/**
+	 * Returns the data URI for each background pattern, keyed by pattern.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array
+	 */
+	public static function backgroundPatterns() {
+
+		return array_map( function( $pattern ) {
+			return 'data:image/svg+xml;base64,' . base64_encode( $pattern['svg'] ); // phpcs:ignore
+		}, Config::get( 'background-patterns' ) );
+	}
+
+	/**
+	 * Returns the background CSS for a Background Type. `customize-previews.js` builds
+	 * the same CSS in the live preview, so keep the two in step.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string $type    Background type: none, image or pattern.
+	 * @param  string $pattern Background pattern.
+	 * @param  string $image   Background image URL.
+	 * @return string
+	 */
+	public static function backgroundCss( $type, $pattern, $image ) {
+
+		$patterns = static::backgroundPatterns();
+
+		if ( 'image' === $type && $image ) {
+			return sprintf( '%s { background-image: url("%s"); background-size: cover; }', self::BACKGROUND_SELECTOR, esc_url( $image ) );
+		}
+
+		if ( 'pattern' === $type && isset( $patterns[ $pattern ] ) ) {
+			// A lighter, partly see-through background color blended with the pattern.
+			return sprintf(
+				'%s { background-color: rgba(255, 255, 255, 0.9); background-image: url("%s"); background-repeat: repeat; background-blend-mode: lighten; }',
+				self::BACKGROUND_SELECTOR,
+				$patterns[ $pattern ]
+			);
+		}
+
+		if ( 'none' === $type ) {
+			return sprintf( '%s { background-image: none; }', self::BACKGROUND_SELECTOR );
+		}
+
+		return '';
+	}
+
+	/**
+	 * Prints the background CSS in its own `prismatic-background-inline-css` style
+	 * block, which the live preview replaces as the background settings change.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function enqueueBackgroundStyles() {
-		$bg_type = get_theme_mod('theme_global_background_type', 'none');
-		$bg_pattern = get_theme_mod('theme_global_background_pattern', 'none');
-		$bg_image = get_background_image();
-		$patterns = Config::get('background-patterns');
 
-		$custom_css = '';
+		wp_register_style( 'prismatic-background', false, [ 'prismatic-screen' ], null );
+		wp_enqueue_style( 'prismatic-background' );
 
-		if ($bg_type === 'image' && $bg_image) {
-			$custom_css = 'body.custom-background { background-image: url("' . esc_url($bg_image) . '"); background-size: cover; }';
-		} elseif ($bg_type === 'pattern' && isset($patterns[$bg_pattern])) {
-			$pattern_svg = $patterns[$bg_pattern]['svg'];
-			$pattern_svg_base64 = base64_encode($pattern_svg); // phpcs:ignore
-			$custom_css = 'body.custom-background {
-				background-color: rgba(255, 255, 255, 0.9); /* Lighter background color with opacity */
-				background-image: url("data:image/svg+xml;base64,' . $pattern_svg_base64 . '");
-				background-repeat: repeat;
-				background-blend-mode: lighten; /* Blend the pattern with the lighter background color */
-			}';
-		} elseif ($bg_type === 'none') {
-			$custom_css = 'body.custom-background { background-image: none; }';
-		}
-
-		if (!empty($custom_css)) {
-			wp_add_inline_style('prismatic-screen', $custom_css);
-		}
+		wp_add_inline_style( 'prismatic-background', static::backgroundCss(
+			get_theme_mod( 'theme_global_background_type', 'none' ),
+			get_theme_mod( 'theme_global_background_pattern', 'none' ),
+			get_background_image()
+		) );
 	}
 }
