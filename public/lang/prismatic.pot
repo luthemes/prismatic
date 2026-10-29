@@ -1,0 +1,940 @@
+# Copyright (C) 2026 Benjamin Lu
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Prismatic 0.2.1\n"
+"Report-Msgid-Bugs-To: https://github.com/luthemes/prismatic/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-29T02:17:36+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: prismatic\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Prismatic"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://luthemes.com/portfolio/prismatic"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Prismatic is a clean, minimal, and modern theme for ClassicPress or WordPress, perfect for blogs or personal sites. It features a two-column layout with a customizable sidebar and a focus on readability and content presentation."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Benjamin Lu"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://luthemes.com"
+msgstr ""
+
+#: app/Customize/Background/Customize.php:37
+msgid "Background"
+msgstr ""
+
+#: app/Customize/Background/Customize.php:82
+msgid "Background color used for body of the site."
+msgstr ""
+
+#: app/Customize/Background/Customize.php:88
+msgid "Background Type"
+msgstr ""
+
+#: app/Customize/Background/Customize.php:94
+#: app/Customize/Background/Customize.php:102
+msgid "None"
+msgstr ""
+
+#: app/Customize/Background/Customize.php:95
+msgid "Image"
+msgstr ""
+
+#: app/Customize/Background/Customize.php:96
+msgid "Pattern"
+msgstr ""
+
+#: app/Customize/Background/Customize.php:109
+msgid "Background Pattern"
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:24
+#: app/Customize/Header/Customize.php:35
+msgid "Colors"
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:29
+msgid "Credit"
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:76
+#: app/Customize/Header/Customize.php:75
+msgid "Background Color"
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:85
+msgid "Show random \"powered by\" credit text."
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:92
+msgid "Custom Footer Text"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:23
+msgid "Theme: Home"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:40
+msgid "Introduction"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:44
+#: app/Customize/Home/Customize.php:90
+#: app/functions-setup.php:103
+msgid "Portfolio"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:48
+#: app/Customize/Home/Customize.php:98
+#: config/layouts-loop.php:16
+msgid "Blog"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:82
+msgid "Our Mission Goes Here"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:86
+msgid "Your description goes here!"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:94
+msgid "Latest Work"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:102
+msgid "Latest Blog"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:126
+msgid "Enable Introduction"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:132
+#: app/Customize/Home/Customize.php:153
+#: app/Customize/Home/Customize.php:174
+msgid "Title"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:138
+#: app/Customize/Home/Customize.php:159
+#: app/Customize/Home/Customize.php:180
+msgid "Description"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:147
+msgid "Enable Portfolio"
+msgstr ""
+
+#: app/Customize/Home/Customize.php:168
+msgid "Enable Blog"
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:33
+msgid "Global Layout"
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:69
+#: app/functions-setup.php:140
+msgid "Left Sidebar"
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:73
+#: app/functions-setup.php:144
+msgid "Right Sidebar"
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:79
+msgid "General Layout applies to all layouts that supports in this theme."
+msgstr ""
+
+#. Translators: 1 is the Composer command, 2 is the theme folder.
+#: app/framework-missing.php:27
+#, php-format
+msgid "The Prismatic theme can't find the Backdrop framework. Run %1$s in the %2$s folder, or upload a copy of the theme that includes its vendor folder."
+msgstr ""
+
+#: app/functions-assets.php:43
+msgid "Open the main menu"
+msgstr ""
+
+#: app/functions-assets.php:44
+msgid "Close the main menu"
+msgstr ""
+
+#: app/functions-assets.php:45
+msgid "expand child menu"
+msgstr ""
+
+#: app/functions-assets.php:46
+msgid "collapse child menu"
+msgstr ""
+
+#. Translators: %s is the post title for screen readers.
+#: app/functions-extras.php:99
+#, php-format
+msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
+msgstr ""
+
+#: app/functions-setup.php:64
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/functions-setup.php:65
+msgid "Social Navigation"
+msgstr ""
+
+#: app/functions-setup.php:91
+msgid "Primary"
+msgstr ""
+
+#: app/functions-setup.php:95
+msgid "Subsidiary"
+msgstr ""
+
+#: app/functions-setup.php:99
+msgid "Custom"
+msgstr ""
+
+#: app/functions-setup.php:131
+msgid "Home"
+msgstr ""
+
+#: app/functions-setup.php:136
+msgid "Showcase"
+msgstr ""
+
+#: app/functions-setup.php:148
+msgid "Custom Sidebar"
+msgstr ""
+
+#: app/functions-setup.php:172
+msgid "Header Image"
+msgstr ""
+
+#: app/functions-template.php:29
+msgctxt "meta separator"
+msgid "&middot;"
+msgstr ""
+
+#. Translators: %s is the number of minutes.
+#: app/functions-template.php:63
+#, php-format
+msgid "%s min read"
+msgstr ""
+
+#: app/Settings/Admin/OptionsPage.php:198
+#: app/Settings/Manager/Themes/Theme.php:275
+msgid "Customize"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:54
+msgid "General"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:121
+msgid "Clean ClassicPress"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:121
+msgid "Clean WordPress"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:125
+msgid "Reading"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:159
+msgid "404 Page"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:166
+msgid "Emoji"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:171
+msgid "Toolbar"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:176
+msgid "Embeds"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:204
+msgid "Settings related to reading and display options for your site, including the 404 error page."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:219
+#: app/Settings/Admin/Views/Plugins.php:129
+msgid "Clean up unnecessary items on the front end of your site for speed improvements."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:261
+msgid "Add New Page"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:270
+msgid "Select a page to display when users visit a 404 error on your site. Ensure the page is set to private so it does not appear on the front end."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:287
+msgid "Disable Emoji Scripts"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:292
+msgid "All modern browsers support emoji natively. Disabling emoji scripts removes the JavaScript loaded on every page of your site for a small percentage of users on outdated browsers."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:309
+msgid "Disable Toolbar"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:313
+msgid "Disables the toolbar on the front end of the site, which loads additional JavaScript and CSS on every page load."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:326
+msgid "Disable ClassicPress Embeds"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:326
+msgid "Disable WordPress Embeds"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:337
+msgid "Removes the JavaScript that allows other sites to embed your posts."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:354
+msgid "Update Settings"
+msgstr ""
+
+#: app/Settings/Admin/Views/Plugins.php:54
+msgid "Plugins"
+msgstr ""
+
+#: app/Settings/Admin/Views/Plugins.php:126
+msgid "Recommended Plugins"
+msgstr ""
+
+#: app/Settings/Admin/Views/Themes.php:54
+msgid "Themes"
+msgstr ""
+
+#: app/Settings/Manager/Themes/Theme.php:239
+msgid "Active:"
+msgstr ""
+
+#. Translators: %s is the theme name.
+#: app/Settings/Manager/Themes/Theme.php:285
+#, php-format
+msgid "Activate %s"
+msgstr ""
+
+#: app/Settings/Manager/Themes/Theme.php:286
+msgid "Activate"
+msgstr ""
+
+#: app/Settings/Manager/Themes/Theme.php:295
+msgid "Live Preview"
+msgstr ""
+
+#: app/Settings/Manager/Themes/Theme.php:304
+msgid "Download"
+msgstr ""
+
+#: app/Settings/Provider.php:45
+msgid "Prismatic Settings"
+msgstr ""
+
+#: app/Template/ErrorPage.php:115
+msgid "404 Not Found"
+msgstr ""
+
+#: app/Template/ErrorPage.php:134
+msgid "It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:35
+msgid "Powered by heart and soul."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:36
+msgid "Powered by crazy ideas and passion."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:37
+msgid "Powered by the thing that holds all things together in the universe."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:38
+msgid "Powered by love."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:39
+msgid "Powered by the vast and endless void."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:40
+msgid "Powered by the code of a maniac."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:41
+msgid "Powered by peace and understanding."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:42
+msgid "Powered by coffee."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:43
+msgid "Powered by sleepness nights."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:44
+msgid "Powered by the love of all things."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:45
+msgid "Powered by something greater than myself."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:46
+msgid "Powered by whispers from the future."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:47
+msgid "Powered by the fusion of technology and dreams."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:48
+msgid "Powered by the strength found in kindness."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:49
+msgid "Powered by the melodies of the unseen world."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:50
+msgid "Powered by the courage of the unheard voices."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:51
+msgid "Powered by the beauty of the human spirit."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:52
+msgid "Powered by the quest for eternal wisdom."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:53
+msgid "Powered by the energy of uncharted galaxies."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:54
+msgid "Powered by the magic hidden in plain sight."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:55
+msgid "Powered by the legacy of the ancients."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:56
+msgid "Powered by the dance between light and darkness."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:57
+msgid "Powered by the touch of the morning sun."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:58
+msgid "Powered by the secrets of the deep ocean."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:59
+msgid "Powered by the echoes of laughter and joy."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:60
+msgid "Powered by the relentless pursuit of truth."
+msgstr ""
+
+#: config/background-patterns.php:19
+msgid "4 Point Stars"
+msgstr ""
+
+#: config/background-patterns.php:23
+msgid "Anchors Away"
+msgstr ""
+
+#: config/background-patterns.php:27
+msgid "Architect"
+msgstr ""
+
+#: config/background-patterns.php:31
+msgid "Autumn"
+msgstr ""
+
+#: config/background-patterns.php:35
+msgid "Aztec"
+msgstr ""
+
+#: config/background-patterns.php:39
+msgid "Bamboo"
+msgstr ""
+
+#: config/background-patterns.php:43
+msgid "Bank Note"
+msgstr ""
+
+#: config/background-patterns.php:47
+msgid "Bathroom Floor"
+msgstr ""
+
+#: config/background-patterns.php:51
+msgid "Bevel Circle"
+msgstr ""
+
+#: config/background-patterns.php:55
+msgid "Boxes"
+msgstr ""
+
+#: config/background-patterns.php:59
+msgid "Brick Wall"
+msgstr ""
+
+#: config/background-patterns.php:63
+msgid "Bubbles"
+msgstr ""
+
+#: config/background-patterns.php:67
+msgid "Cage"
+msgstr ""
+
+#: config/background-patterns.php:71
+msgid "Charlie Brown"
+msgstr ""
+
+#: config/background-patterns.php:75
+msgid "Church on Sunday"
+msgstr ""
+
+#: config/background-patterns.php:79
+msgid "Circles & Squares"
+msgstr ""
+
+#: config/background-patterns.php:83
+msgid "Circuit Board"
+msgstr ""
+
+#: config/background-patterns.php:87
+msgid "Connections"
+msgstr ""
+
+#: config/background-patterns.php:91
+msgid "Cork Screw"
+msgstr ""
+
+#: config/background-patterns.php:95
+msgid "Current"
+msgstr ""
+
+#: config/background-patterns.php:99
+msgid "Curtain"
+msgstr ""
+
+#: config/background-patterns.php:103
+msgid "Cutout"
+msgstr ""
+
+#: config/background-patterns.php:107
+msgid "Death Star"
+msgstr ""
+
+#: config/background-patterns.php:111
+msgid "Diagonal Lines"
+msgstr ""
+
+#: config/background-patterns.php:115
+msgid "Diagonal Stripes"
+msgstr ""
+
+#: config/background-patterns.php:119
+msgid "Dominos"
+msgstr ""
+
+#: config/background-patterns.php:123
+msgid "Endless Clouds"
+msgstr ""
+
+#: config/background-patterns.php:127
+msgid "Eyes"
+msgstr ""
+
+#: config/background-patterns.php:131
+msgid "Falling Triangles"
+msgstr ""
+
+#: config/background-patterns.php:135
+msgid "Fancy Rectangles"
+msgstr ""
+
+#: config/background-patterns.php:139
+msgid "Flipped Diamonds"
+msgstr ""
+
+#: config/background-patterns.php:143
+msgid "Floating Cogs"
+msgstr ""
+
+#: config/background-patterns.php:147
+msgid "Floor Tile"
+msgstr ""
+
+#: config/background-patterns.php:151
+msgid "Formal Invitation"
+msgstr ""
+
+#: config/background-patterns.php:155
+msgid "Glamorous"
+msgstr ""
+
+#: config/background-patterns.php:159
+msgid "Graph Paper"
+msgstr ""
+
+#: config/background-patterns.php:163
+msgid "Groovy"
+msgstr ""
+
+#: config/background-patterns.php:167
+msgid "Happy Intersection"
+msgstr ""
+
+#: config/background-patterns.php:171
+msgid "Heavy Rain"
+msgstr ""
+
+#: config/background-patterns.php:175
+msgid "Hexagons"
+msgstr ""
+
+#: config/background-patterns.php:179
+msgid "Hideout"
+msgstr ""
+
+#: config/background-patterns.php:183
+msgid "Houndstooth"
+msgstr ""
+
+#: config/background-patterns.php:187
+msgid "I Like Food"
+msgstr ""
+
+#: config/background-patterns.php:191
+msgid "Intersecting Circles"
+msgstr ""
+
+#: config/background-patterns.php:195
+msgid "Jigsaw"
+msgstr ""
+
+#: config/background-patterns.php:199
+msgid "Jupiter"
+msgstr ""
+
+#: config/background-patterns.php:203
+msgid "Kiwi"
+msgstr ""
+
+#: config/background-patterns.php:207
+msgid "Leaf"
+msgstr ""
+
+#: config/background-patterns.php:211
+msgid "Lines in Motion"
+msgstr ""
+
+#: config/background-patterns.php:215
+msgid "Lips"
+msgstr ""
+
+#: config/background-patterns.php:219
+msgid "Lisbon"
+msgstr ""
+
+#: config/background-patterns.php:223
+msgid "Melt"
+msgstr ""
+
+#: config/background-patterns.php:227
+msgid "Moroccan"
+msgstr ""
+
+#: config/background-patterns.php:231
+msgid "Morphing Diamonds"
+msgstr ""
+
+#: config/background-patterns.php:235
+msgid "Overcast"
+msgstr ""
+
+#: config/background-patterns.php:239
+msgid "Overlapping Circles"
+msgstr ""
+
+#: config/background-patterns.php:243
+msgid "Overlapping Diamonds"
+msgstr ""
+
+#: config/background-patterns.php:247
+msgid "Overlapping Hexagons"
+msgstr ""
+
+#: config/background-patterns.php:251
+msgid "Parkay Floor"
+msgstr ""
+
+#: config/background-patterns.php:255
+msgid "Piano Man"
+msgstr ""
+
+#: config/background-patterns.php:259
+msgid "Pie Factory"
+msgstr ""
+
+#: config/background-patterns.php:263
+msgid "Pixel Dots"
+msgstr ""
+
+#: config/background-patterns.php:267
+msgid "Plus"
+msgstr ""
+
+#: config/background-patterns.php:271
+msgid "Polka Dots"
+msgstr ""
+
+#: config/background-patterns.php:275
+msgid "Rails"
+msgstr ""
+
+#: config/background-patterns.php:279
+msgid "Rain"
+msgstr ""
+
+#: config/background-patterns.php:283
+msgid "Random Shapes"
+msgstr ""
+
+#: config/background-patterns.php:287
+msgid "Rounded Plus Connected"
+msgstr ""
+
+#: config/background-patterns.php:291
+msgid "Signal"
+msgstr ""
+
+#: config/background-patterns.php:295
+msgid "Skulls"
+msgstr ""
+
+#: config/background-patterns.php:299
+msgid "Slanted Stars"
+msgstr ""
+
+#: config/background-patterns.php:303
+msgid "Squares"
+msgstr ""
+
+#: config/background-patterns.php:307
+msgid "Squares in Squares"
+msgstr ""
+
+#: config/background-patterns.php:311
+msgid "Stamp Collection"
+msgstr ""
+
+#: config/background-patterns.php:315
+msgid "Steel Beams"
+msgstr ""
+
+#: config/background-patterns.php:319
+msgid "Stripes"
+msgstr ""
+
+#: config/background-patterns.php:323
+msgid "Temple"
+msgstr ""
+
+#: config/background-patterns.php:327
+msgid "Texture"
+msgstr ""
+
+#: config/background-patterns.php:331
+msgid "Tic Tac Toe"
+msgstr ""
+
+#: config/background-patterns.php:335
+msgid "Tiny Checkers"
+msgstr ""
+
+#: config/background-patterns.php:339
+msgid "Topography"
+msgstr ""
+
+#: config/background-patterns.php:343
+msgid "Volcano Lamp"
+msgstr ""
+
+#: config/background-patterns.php:347
+msgid "Wallpaper"
+msgstr ""
+
+#: config/background-patterns.php:351
+msgid "Wiggle"
+msgstr ""
+
+#: config/background-patterns.php:355
+msgid "X Equals"
+msgstr ""
+
+#: config/background-patterns.php:359
+msgid "YYY"
+msgstr ""
+
+#: config/background-patterns.php:363
+msgid "Zig Zag"
+msgstr ""
+
+#: config/image-sizes.php:18
+msgid "Landscape: Thumbnail"
+msgstr ""
+
+#: config/image-sizes.php:24
+msgid "Landscape: Medium"
+msgstr ""
+
+#: config/image-sizes.php:29
+msgid "Landscape: Large"
+msgstr ""
+
+#: config/image-sizes.php:34
+msgid "Landscape: Portfolio"
+msgstr ""
+
+#: config/layouts-loop.php:26
+msgid "Grid"
+msgstr ""
+
+#: config/layouts.php:17
+msgid "Full"
+msgstr ""
+
+#: config/layouts.php:20
+msgid "Wide"
+msgstr ""
+
+#. Translators: 1 is the current year, 2 is a link to the site.
+#: config/_settings-mods.php:54
+#, php-format
+msgid "&#169; %1$s. %2$s."
+msgstr ""
+
+#. Translators: 1 is a link to ClassicPress or WordPress, 2 is a link to the theme.
+#: config/_settings-mods.php:58
+#: config/_settings-mods.php:61
+#, php-format
+msgid "Powered by %1$s and %2$s."
+msgstr ""
+
+#: index.php:13
+msgid "This site is temporarily unavailable."
+msgstr ""
+
+#: index.php:14
+msgid "Theme dependencies are missing"
+msgstr ""
+
+#. Translators: %s is the parent comment link.
+#: public/views/comment/default.php:6
+#, php-format
+msgid "In reply to %s"
+msgstr ""
+
+#: public/views/comment/default.php:35
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: public/views/comments/default.php:14
+msgctxt "comments title"
+msgid "One Comment"
+msgstr ""
+
+#. Translators: 1 = counts.
+#: public/views/comments/default.php:17
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/views/comments/default.php:34
+msgid "Older Comments"
+msgstr ""
+
+#: public/views/comments/default.php:35
+msgid "Newer Comments"
+msgstr ""
+
+#: public/views/entry/page.php:12
+#: public/views/entry/single.php:18
+#: public/views/nav/pagination/post.php:8
+msgid "Pages:"
+msgstr ""
+
+#: public/views/entry/page.php:16
+#: public/views/entry/single.php:22
+msgid "Page"
+msgstr ""
+
+#: public/views/header/default.php:10
+msgid "Skip to content"
+msgstr ""
+
+#: public/views/menu/primary.php:5
+msgid "Menu"
+msgstr ""
+
+#: public/views/nav/pagination/posts.php:6
+msgid "&larr; Previous"
+msgstr ""
+
+#: public/views/nav/pagination/posts.php:7
+msgid "Next &rarr;"
+msgstr ""
+
+#: public/views/nav/pagination/posts.php:8
+msgid "Posts Navigation"
+msgstr ""

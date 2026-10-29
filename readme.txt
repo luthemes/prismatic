@@ -15,8 +15,9 @@ Prismatic is a clean, minimal, and modern theme for ClassicPress or WordPress, p
 This theme bundles the following resources
 * [FontAwesome](https://fontawesome.com) - [CC by 4.0 License](https://creativecommons.org/licenses/by/4.0)
 * [Backdrop](https://github.com/backdrop-dev) - By Benjamin Lu - GNU  GPL, version 2 or higher.
+* [Hero Patterns](https://heropatterns.com) - By Steve Schoger - [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0) - The background patterns in the customizer.
 
-This theme makes use of several open-source fonts available via Google Web Fonts.
+This theme bundles the following open-source fonts, served from the theme itself.
 
 * [Fira Sans](https://fonts.google.com/specimen/Fira+Sans) ([SIL Open Font License 1.1](http://scripts.sil.org/OFL))
 * [Merriweather](https://fonts.google.com/specimen/Merriweather) ([SIL Open Font License 1.1](http://scripts.sil.org/OFL))

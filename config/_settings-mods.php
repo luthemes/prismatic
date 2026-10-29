@@ -50,11 +50,14 @@ use function Backdrop\is_classicpress;
 	// Default footer credit text.
 	'theme_footer_custom_credit' => function() {
 		$year = gmdate('Y'); // Get the current year
+		// Translators: 1 is the current year, 2 is a link to the site.
 		$copyright = sprintf(__("&#169; %1\$s. %2\$s.", 'prismatic'), $year, Backdrop\Site\render_home_link());
 
 		if (is_classicpress()) {
+			// Translators: 1 is a link to ClassicPress or WordPress, 2 is a link to the theme.
 			$footer_text = sprintf(__("Powered by %1\$s and %2\$s.", 'prismatic'), Backdrop\Site\render_cp_link(), Backdrop\Site\render_theme_link());
 		} else {
+			// Translators: 1 is a link to ClassicPress or WordPress, 2 is a link to the theme.
 			$footer_text = sprintf(__("Powered by %1\$s and %2\$s.", 'prismatic'), Backdrop\Site\render_wp_link(), Backdrop\Site\render_theme_link());
 		}
 

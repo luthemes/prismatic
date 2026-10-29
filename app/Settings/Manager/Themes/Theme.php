@@ -281,6 +281,7 @@ class Theme {
 				$actions[] = sprintf(
 					'<a class="button activate" href="%s" aria-label="%s">%s</a>',
 					esc_url( $this->activateUrl() ),
+					// Translators: %s is the theme name.
 					esc_attr( sprintf( __( 'Activate %s', 'prismatic' ), $this->label() ) ),
 					esc_html__( 'Activate', 'prismatic' )
 				);
