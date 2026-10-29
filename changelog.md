@@ -1,17 +1,35 @@
 # Change Log
 
 ## 0.2.1 - 10.28.2026
+### Breaking
+These affect child themes and custom code; the theme's own settings carry over.
+- Requires WordPress 5.9 or later (ClassicPress 2.0 or later) and PHP 7.4 or later.
+- The framework functions the theme used to call were removed or renamed. Child themes calling them need to update:
+  - `Backdrop\Theme\Entry\*` → `Backdrop\Post\*`, `Backdrop\Theme\Site\*` → `Backdrop\Site\*` (`display_site_title()` and `display_site_description()` are now `display_title()` and `display_description()`), `Backdrop\Theme\Comment\*` → `Backdrop\Comment\*`.
+  - `Backdrop\Theme\is_classicpress()` and `is_plugin_or_class_active()` → `Backdrop\is_classicpress()` and `Backdrop\is_plugin_or_class_active()`.
+  - `Backdrop\Template\Hierarchy\hierarchy()` → `Backdrop\Template\hierarchy()`.
+  - `Backdrop\Customize\Helpers\Sanitize` → `Prismatic\Customize\Sanitize`.
+  - `Backdrop\Theme\Entry\display_reading_time()` → `Prismatic\display_reading_time()`, and its `backdrop/display/reading_time` filter is now `prismatic/reading_time`.
+  - `Backdrop\Mix\asset()` and `childAsset()` → `Prismatic\Vite\asset()` for the parent theme's assets. `backdrop-dev/mix` is no longer included, so child themes that used `childAsset()` need their own asset loading.
+- Assets are built with Vite (`npm run build`, Node 20.19 or 22.12 and later) and have content-hashed file names. Enqueue them by source path through `Prismatic\Vite\asset()`, for example `asset( 'resources/scss/screen.scss' )`. The script and style handles are unchanged.
+- The background CSS is now printed in its own `prismatic-background` style block instead of after `prismatic-screen`.
+
+### Added
+- A translation template, `public/lang/prismatic.pot`, and translator comments for the strings with placeholders.
+- Credits for Hero Patterns (CC BY 4.0), which the background patterns come from.
+
 ### Changed
-- Updated to the `develop` branch of `backdrop-dev/framework`, which replaces the separate `customize`, `languages`, `pagination`, `template-hierarchy`, `template-manager`, `theme` and `view` packages, and use the framework's Customize component.
-- The header colors have their own **Theme: Header → Colors** section, since the framework removes the core Colors section.
-- Replaced Laravel Mix with Vite, like Amicable. Laravel Mix and its webpack toolchain pull in packages with known vulnerabilities; the build now needs only `vite` and `sass`. Built assets have content-hashed names, which the theme's own `Prismatic\Vite\asset()` reads from Vite's manifest, so `backdrop-dev/mix` is no longer required.
-- The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token, checks that the release tag matches the `style.css` version, and stops if `npm audit` finds a high or critical vulnerability.
-- Declares `Domain Path: /public/lang` in `style.css`.
+- Updated to the `develop` branch of `backdrop-dev/framework`, which replaces the separate `customize`, `languages`, `pagination`, `template-hierarchy`, `template-manager`, `theme` and `view` packages, and use the framework's Customize component. `backdrop-dev/framework` and `backdrop-dev/fonts` are pinned to the commits this release was tested with.
+- Replaced Laravel Mix with Vite. Laravel Mix and its webpack toolchain pull in packages with known vulnerabilities; the build now needs only `vite` (7.3.7 or later) and `sass`, with Rollup and Immutable kept at patched versions. `package-lock.json` pins the build tools.
 - Background Type and Background Pattern preview instantly with postMessage, instead of reloading the customizer preview.
+- The header colors have their own **Theme: Header → Colors** section, since the framework removes the core Colors section.
+- The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token, installs exactly what `package-lock.json` pins, checks that the release tag matches the `style.css` version, and stops if `npm audit` finds a high or critical vulnerability. The coding standards check runs on pull requests too, and pins a version that accepts the ClassicPress rules.
+- Declares `Domain Path: /public/lang` in `style.css`.
 
 ### Removed
 - Composer dev dependencies (`wptrt/wpthemereview` is abandoned and blocked `composer install`) and `composer.lock`, which pinned the old split packages.
 - `webpack.mix.js`, `webpack.mix.export.js` and the Laravel Mix `package-lock.json`.
+- `phpcs.xml.dist`, which referenced the removed coding standards; CI uses the ClassicPress rules.
 
 ### Fixed
 - A chosen background pattern (or None) is no longer overridden by a background image saved earlier.
@@ -22,8 +40,10 @@
 - The menu toggles' screen reader text was empty.
 - Featured images no longer ask for Creativity's image sizes, and small screens load a 768px image.
 - Show an admin notice instead of a fatal error when the Backdrop framework isn't installed.
-- Removed calls to framework functions that no longer exist (`Backdrop\Theme\Entry\*`, `Backdrop\Theme\Site\*`, `Backdrop\Theme\Comment\*`, `Backdrop\Template\Hierarchy\hierarchy`, `Backdrop\Customize\Helpers\Sanitize`), and kept the post and menu item classes the styles use.
+- Kept the post and menu item classes the styles use, which the framework replaces.
 - The settings page no longer requests a missing `admin.css`.
+- `style.css` said WordPress 4.9 was enough; the theme needs 5.9.
+- The child theme instructions in `readme.md` used the wrong `Template`, and `composer.json` described the theme as Creativity.
 
 ## 0.2.0 - 04.03.2025
 ### Misc

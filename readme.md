@@ -6,7 +6,7 @@ This theme is a parent theme. What this means is that to customize it, you shoul
 ## Child themes
 Since Prismatic is a parent theme, you'll want to create a child theme if you plan on making any customizations. Don't know how to make a child theme? Just follow the steps below.
 
-* Create a theme folder in your `wp-content/themes` directory called `Prismatic-child`.
+* Create a theme folder in your `wp-content/themes` directory called `prismatic-child`.
 * Create a `style.css` file within your theme folder.
 * At the top of your `style.css` file, add the below information.
 
@@ -19,9 +19,11 @@ Since Prismatic is a parent theme, you'll want to create a child theme if you pl
  * Author: Your Name
  * Author URI: https://link-to-your-site.com
  * Tags: Add, Whatever, Tags, You, Want
- * Template: Prismatic-child
+ * Template: prismatic
  */
 </pre>
+
+`Template` must be the parent theme's folder name, `prismatic`.
 
 From this point, you simply need to start adding your own styles. The parent theme styles will automatically be loaded for you.
 
@@ -30,7 +32,9 @@ This theme bundles the following resources
 * [FontAwesome](https://fontawesome.com) - [CC by 4.0 License](https://creativecommons.org/licenses/by/4.0)
 * [Backdrop](https://github.com/backdrop-dev) - By Benjamin Lu - GNU  GPL, version 2 or higher.
 
-This theme makes use of several open-source fonts available via Google Web Fonts.
+* [Hero Patterns](https://heropatterns.com) - By Steve Schoger - [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0) (background patterns)
+
+This theme bundles the following open-source fonts, served from the theme itself.
 
 * [Fira Sans](https://fonts.google.com/specimen/Fira+Sans) ([SIL Open Font License 1.1](http://scripts.sil.org/OFL))
 * [Merriweather](https://fonts.google.com/specimen/Merriweather) ([SIL Open Font License 1.1](http://scripts.sil.org/OFL))

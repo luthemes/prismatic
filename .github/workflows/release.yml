@@ -39,11 +39,9 @@ jobs:
             - name: Install Composer dependencies
               run: composer install --no-dev --no-interaction --prefer-dist
 
-            # package-lock.json isn't committed, so use `npm install` rather than `npm ci`. The
-            # `overrides` in package.json set the lowest patched versions of the build tools'
-            # own dependencies.
+            # Install exactly what package-lock.json pins.
             - name: Install Node dependencies
-              run: npm install --no-fund
+              run: npm ci --no-fund
 
             # Don't publish a release built with build tools that have a known high or critical
             # vulnerability.

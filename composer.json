@@ -1,12 +1,12 @@
 {
 	"name": "luthemes/prismatic",
 	"type": "classicpress-theme",
-	"description": "Creativity is a next-generation theme designed to work with ClassicPress, offering an ideal experience for showcasing your site's content.",
+	"description": "Prismatic is a next-generation theme designed to work with ClassicPress, offering an ideal experience for showcasing your site's content.",
 	"keywords": [
 		"classicpress",
 		"theme"
 	],
-	"homepage": "https://luthemes.com/portfolio/creativity",
+	"homepage": "https://luthemes.com/portfolio/prismatic",
 	"license": "GPL-2.0-or-later",
 	"version": "1.0.0",
 	"authors": [
@@ -23,7 +23,7 @@
 	},
 	"require": {
 		"php": ">=7.4",
-		"backdrop-dev/fonts": "dev-develop",
-		"backdrop-dev/framework": "dev-develop"
+		"backdrop-dev/fonts": "dev-develop#c64cb8aafbacae0eea6231b0d86228c8a5d8940d",
+		"backdrop-dev/framework": "dev-develop#7989430268cc98d99a993e0e6bd6f11d3f418a8a"
 	}
 }
