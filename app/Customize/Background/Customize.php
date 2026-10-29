@@ -50,7 +50,7 @@ class Customize extends Customizable {
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
-        $manager->get_setting( 'background_color' )->default = '#ffffff';
+        $manager->get_setting( 'background_color' )->default = 'ffffff'; // Core stores this color without the #.
 
 		// Add setting for background type (none, image, pattern)
 		$manager->add_setting('theme_global_background_type', [

@@ -13,6 +13,8 @@
 - `webpack.mix.js`, `webpack.mix.export.js` and the Laravel Mix `package-lock.json`.
 
 ### Fixed
+- Customizer controls that don't apply are hidden when the customizer opens. Background Pattern showed while Background Type was None, so choosing a pattern did nothing; Background Image showed while it was Pattern; and Custom Footer Text showed while the "powered by" credit was on.
+- The customizer preview no longer prints an invalid background color (`##ffffff`).
 - The customizer controls script loads; it was enqueued from the CSS folder, which caused a JavaScript error in the customizer.
 - The Home panel's Blog title control changed the Portfolio title.
 - The menu toggles' screen reader text was empty.
