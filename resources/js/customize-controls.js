@@ -45,3 +45,27 @@ wp.customize.bind( 'ready', function() {
 	// Controls added later, such as widgets and menu items.
 	wp.customize.control.bind( 'add', watch );
 } );
+
+/*
+ * Show Background Pattern or Background Image for the chosen Background Type.
+ *
+ * Background Type uses postMessage, so the preview doesn't reload and send new
+ * active states when it changes. Set them here instead; they match the controls'
+ * active callbacks in PHP.
+ */
+wp.customize.bind( 'ready', function() {
+	wp.customize( 'theme_global_background_type', function( type ) {
+		var controls = {
+			theme_global_background_pattern: 'pattern',
+			background_image: 'image'
+		};
+
+		jQuery.each( controls, function( id, value ) {
+			wp.customize.control( id, function( control ) {
+				type.bind( function( to ) {
+					control.active.set( value === to );
+				} );
+			} );
+		} );
+	} );
+} );

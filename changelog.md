@@ -7,12 +7,14 @@
 - Replaced Laravel Mix with Vite, like Amicable. Laravel Mix and its webpack toolchain pull in packages with known vulnerabilities; the build now needs only `vite` and `sass`. Built assets have content-hashed names, which the theme's own `Prismatic\Vite\asset()` reads from Vite's manifest, so `backdrop-dev/mix` is no longer required.
 - The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token, checks that the release tag matches the `style.css` version, and stops if `npm audit` finds a high or critical vulnerability.
 - Declares `Domain Path: /public/lang` in `style.css`.
+- Background Type and Background Pattern preview instantly with postMessage, instead of reloading the customizer preview.
 
 ### Removed
 - Composer dev dependencies (`wptrt/wpthemereview` is abandoned and blocked `composer install`) and `composer.lock`, which pinned the old split packages.
 - `webpack.mix.js`, `webpack.mix.export.js` and the Laravel Mix `package-lock.json`.
 
 ### Fixed
+- A chosen background pattern (or None) is no longer overridden by a background image saved earlier.
 - Customizer controls that don't apply are hidden when the customizer opens. Background Pattern showed while Background Type was None, so choosing a pattern did nothing; Background Image showed while it was Pattern; and Custom Footer Text showed while the "powered by" credit was on.
 - The customizer preview no longer prints an invalid background color (`##ffffff`).
 - The customizer controls script loads; it was enqueued from the CSS folder, which caused a JavaScript error in the customizer.

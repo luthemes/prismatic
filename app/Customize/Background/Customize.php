@@ -53,15 +53,18 @@ class Customize extends Customizable {
         $manager->get_setting( 'background_color' )->default = 'ffffff'; // Core stores this color without the #.
 
 		// Add setting for background type (none, image, pattern)
+		// Previewed by customize-previews.js; see Component::backgroundCss().
 		$manager->add_setting('theme_global_background_type', [
             'default' => 'none',
 			'sanitize_callback' => 'sanitize_text_field',
+			'transport' => 'postMessage',
         ] );
 
         // Add setting for background pattern
         $manager->add_setting('theme_global_background_pattern', [
             'default' => 'none',
             'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ] );
 	}
 
