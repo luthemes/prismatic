@@ -1,3 +1,8 @@
+/* Controls whose active callback is false (see customize-controls.js). */
+li.customize-control.prismatic-control-inactive {
+	display: none !important;
+}
+
 li.customize-control-backdrop-radio-image input[type="radio"] {
 	display: none;
 }
