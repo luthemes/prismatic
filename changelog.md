@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.3 - 11.02.2026
+### Fixed
+- The settings page (Appearance -> Prismatic Settings) heading, Customize button link and tab classes were empty, and opening an unknown tab (`?view=...`) caused a fatal error; it now falls back to the General tab.
+- PHP 8.1 and later reported "Return type of Prismatic\Tools\Collection::jsonSerialize() should either be compatible with JsonSerializable::jsonSerialize()" on the settings page.
+- The Plugins tab no longer warns "Attempt to read property "name" on false" when plugin information can't be fetched.
+
 ## 0.2.2 - 11.02.2026
 ### Added
 - The translation template, `public/lang/prismatic.pot`, now includes the strings that come from the Backdrop framework, such as the pagination's Previous and Next, "Search results for: %s", "Archives" and the customizer's Theme: panels. The framework translates them through the theme's own text domain, so they are translated along with the rest of the theme; until now they were missing from the template, so they stayed in English.

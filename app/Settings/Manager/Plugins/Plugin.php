@@ -40,7 +40,8 @@ class Plugin {
             )
         );
 
-        if ( ! is_wp_error( $api ) ) {
+        // `plugins_api()` can also return false (for example when the request fails).
+        if ( is_object( $api ) && ! is_wp_error( $api ) && isset( $api->name ) ) {
             $this->label = $api->name;
             if ( isset( $api->download_link ) ) {
                 $this->download_url = $api->download_link;

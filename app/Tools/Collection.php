@@ -33,6 +33,7 @@ class Collection extends CollectionBase implements JsonSerializable {
 	 * @access public
 	 * @return array
 	 */
+	#[\ReturnTypeWillChange]
 	public function jsonSerialize() {
 
 		return array_map( function( $value ) {
