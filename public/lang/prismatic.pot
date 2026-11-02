@@ -2,17 +2,137 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Prismatic 0.2.1\n"
+"Project-Id-Version: Prismatic 0.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/luthemes/prismatic/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-29T02:17:36+00:00\n"
+"POT-Creation-Date: 2026-11-02T18:48:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: prismatic\n"
+
+#: Comment/functions-comment.php:284
+msgid "Edit"
+msgstr ""
+
+#: Customize/Component.php:90
+msgid "Theme: Global"
+msgstr ""
+
+#: Customize/Component.php:91
+msgid "Theme: Header"
+msgstr ""
+
+#: Customize/Component.php:92
+msgid "Theme: Content"
+msgstr ""
+
+#: Customize/Component.php:93
+msgid "Theme: Footer"
+msgstr ""
+
+#: Customize/Component.php:130
+msgid "Branding"
+msgstr ""
+
+#: functions-filters.php:200
+msgid "(Untitled)"
+msgstr ""
+
+#: Pagination/Pagination.php:148
+msgid "Previous"
+msgstr ""
+
+#: Pagination/Pagination.php:149
+msgid "Next"
+msgstr ""
+
+#: Pagination/Pagination.php:541
+msgid "&hellip;"
+msgstr ""
+
+#. Translators: Separates tags, categories, etc. when displaying a post.
+#: Post/functions-post.php:379
+msgctxt "taxonomy terms separator"
+msgid ", "
+msgstr ""
+
+#: Site/functions-site.php:291
+msgid "https://wordpress.org"
+msgstr ""
+
+#: Site/functions-site.php:292
+msgid "WordPress"
+msgstr ""
+
+#: Site/functions-site.php:336
+msgid "https://www.classicpress.net"
+msgstr ""
+
+#: Site/functions-site.php:337
+msgid "ClassicPress"
+msgstr ""
+
+#: Util/Title.php:88
+msgid "Archives"
+msgstr ""
+
+#. Translators: %s is the search query.
+#: Util/Title.php:148
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: Util/Title.php:163
+#: app/Template/ErrorPage.php:115
+msgid "404 Not Found"
+msgstr ""
+
+#: Util/Title.php:232
+#: Util/Title.php:261
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#. Translators: %1$s is the week number and %2$s is the year.
+#: Util/Title.php:252
+#, php-format
+msgid "Week %1$s of %2$s"
+msgstr ""
+
+#: Util/Title.php:254
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: Util/Title.php:281
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: Util/Title.php:300
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#. Translators: %s is the minute.
+#: Util/Title.php:320
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: Util/Title.php:322
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: Util/Title.php:342
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
 
 #. Theme Name of the theme
 #: style.css
@@ -365,10 +485,6 @@ msgstr ""
 
 #: app/Settings/Provider.php:45
 msgid "Prismatic Settings"
-msgstr ""
-
-#: app/Template/ErrorPage.php:115
-msgid "404 Not Found"
 msgstr ""
 
 #: app/Template/ErrorPage.php:134
