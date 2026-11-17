@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.4 - 11.17.2026
+### Fixed
+- Activating a plugin built on the Backdrop framework, such as Backdrop Custom Portfolio, caused a fatal error ("Cannot redeclare Backdrop\booted()"). The theme now requires the framework's `^1.0.1` release, which only declares its helper functions when they don't exist yet, instead of a `develop` commit from before that fix. Run `composer update backdrop-dev/framework` if you build the theme from source.
+
 ## 0.2.3 - 11.02.2026
 ### Fixed
 - The settings page (Appearance -> Prismatic Settings) heading, Customize button link and tab classes were empty, and opening an unknown tab (`?view=...`) caused a fatal error; it now falls back to the General tab.
