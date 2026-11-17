@@ -24,6 +24,6 @@
 	"require": {
 		"php": ">=7.4",
 		"backdrop-dev/fonts": "dev-develop#c64cb8aafbacae0eea6231b0d86228c8a5d8940d",
-		"backdrop-dev/framework": "dev-develop#7989430268cc98d99a993e0e6bd6f11d3f418a8a"
+		"backdrop-dev/framework": "^1.0.1"
 	}
 }
